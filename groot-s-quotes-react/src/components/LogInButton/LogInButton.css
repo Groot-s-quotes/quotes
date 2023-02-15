@@ -1,0 +1,81 @@
+.btn-7:before {
+    height: 0%;
+    width: 2px;
+  }
+  
+.btn-7 span:first-child {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  
+.btn-7:after {
+    width: 0%;
+    height: 2px;
+  }
+  
+.btn-7 span:hover:before,
+.btn-7:hover:before {
+    height: 100%;
+  }
+
+.btn-7 span:hover:after,
+.btn-7:hover:after {
+  width: 100%;
+}
+
+.btn-7 span:before {
+  width: 2px;
+  height: 0%;
+}
+
+.btn-7:after,
+.btn-7:before {
+  position: absolute;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  bottom: 0;
+  content: "";
+    right: 0;
+    background: var(--green);
+    -webkit-box-shadow: -7px -7px 20px 0 rgba(255, 255, 255, 0.9),
+      -4px -4px 5px 0 rgba(255, 255, 255, 0.9), 7px 7px 20px 0 rgba(0, 0, 0, 0.2),
+      4px 4px 5px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: -7px -7px 20px 0 rgba(255, 255, 255, 0.9),
+      -4px -4px 5px 0 rgba(255, 255, 255, 0.9), 7px 7px 20px 0 rgba(0, 0, 0, 0.2),
+      4px 4px 5px 0 rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+  .btn-7 span:after,
+  .btn-7 span:before {
+    position: absolute;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    content: "";
+  }
+
+  .btn-7:hover {
+    color: var(--green);
+    background: 0 0;
+  }
+
+  .btn-7 span:after,
+.btn-7 span:before {
+  left: 0;
+  top: 0;
+  background: var(--green);
+  -webkit-box-shadow: -7px -7px 20px 0 rgba(255, 255, 255, 0.9),
+    -4px -4px 5px 0 rgba(255, 255, 255, 0.9), 7px 7px 20px 0 rgba(0, 0, 0, 0.2),
+    4px 4px 5px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: -7px -7px 20px 0 rgba(255, 255, 255, 0.9),
+    -4px -4px 5px 0 rgba(255, 255, 255, 0.9), 7px 7px 20px 0 rgba(0, 0, 0, 0.2),
+    4px 4px 5px 0 rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+.btn-7 span:after {
+  height: 2px;
+  width: 0%;
+}
+

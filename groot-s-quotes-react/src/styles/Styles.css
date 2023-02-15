@@ -1,0 +1,15 @@
+@import url(../components/Header/Header.css);
+@import url(../components/SignInButton/SignInButton.css);
+@import url(../components/LogInButton/LogInButton.css);
+@import url(../components/WatchQuotesButton/WatchQuotesButton.css);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+:root{
+    --green-dark: #395144;
+    --green: #4E6C50;
+    --green-ligth: #B7B78A;
+    --white-bone: #F0EBCE;
+    --letter: 'Montserrat', sans-serif;
+    --quotes-letter: 'Dancing Script', cursive;
+}
