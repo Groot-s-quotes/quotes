@@ -19,19 +19,31 @@ class AuthController extends Controller
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = $request->password;
+        $user->password = Hash::make($request->password);
         $user->save();
         //response
 
-        return response()->json([
+       /* return response()->json([
             "message" => "Successfully registered"
-        ]);
+        ]);*/
+
+        return response($user, Response::HTTP_CREATED);
     }
 
     public function login(Request $request){
-        return response()->json([
-            "message" => "Metodo LOGIN ok"
+        $credentials = $request->validate([
+            'email' => ['required'. 'email'],
+            'password' => ['required']
         ]);
+
+        if (Auth::attempt($credentials)){
+            $user = Auth::user();
+            $token = $user->createToken('token')->plainTextToken;
+            $cookie = cookie('cookie_token', $token, 60 * 24);
+            return response(["token"=>$token], Response::HTTP_OK)->withoutCookie($cookie);
+        } else{
+            return response(Response::HTTP_UNAUTHORIZED);
+        }
     }
 
     public function userProfile(Request $request){
