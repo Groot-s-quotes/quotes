@@ -3,7 +3,7 @@ import './HomePage'
 
 const HomePage = () => {
   return (
-    <div className="home-page">
+    <div className="-page">
 
     </div>
   )

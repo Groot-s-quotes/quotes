@@ -1,10 +1,13 @@
 import React from 'react';
-import './Loginpage.css'
+import './LogInPage.css';
+import Header from '../../components/Header/Header';
 
-const Loginpage = () => {
+const LogInPage = () => {
   return (
-    <div>Loginpage</div>
+    <div>
+      <Header/>
+    </div>
   )
 }
 
-export default Loginpage
+export default LogInPage
