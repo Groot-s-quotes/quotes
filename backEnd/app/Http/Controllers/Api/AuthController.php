@@ -45,12 +45,15 @@ class AuthController extends Controller
             $cookie = cookie('cookie_token', $token, 60 * 24);
             return response(["token"=>$token], Response::HTTP_OK)->withoutCookie($cookie);
         } else{
-            return response(Response::HTTP_UNAUTHORIZED);
+            return response(["message"=>"Invalid credentials"], Response::HTTP_UNAUTHORIZED);
         }
     }
 
     public function userProfile(Request $request){
-
+        return response()->json([
+        "message" =>"userProfile OK",
+        "userData" => auth()->user()
+        ], Response::HTTP_OK);
     }
 
     public function logout(){
