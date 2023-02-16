@@ -9,5 +9,4 @@ class Quote extends Model
 {
     use HasFactory;
     protected $fillable = ['author_name', 'quote_text', 'oustanding', 'image'];
-
 }
