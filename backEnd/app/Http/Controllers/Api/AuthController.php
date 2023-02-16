@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Hash;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -25,17 +26,12 @@ class AuthController extends Controller
         $user->password = Hash::make($request->password);
         $user->save();
         //response
-
-       /* return response()->json([
-            "message" => "Successfully registered"
-        ]);*/
-
         return response($user, Response::HTTP_CREATED);
     }
 
     public function login(Request $request){
         $credentials = $request->validate([
-            'email' => ['required'. 'email'],
+            'email' => ['required', 'email'],
             'password' => ['required']
         ]);
 
@@ -57,9 +53,13 @@ class AuthController extends Controller
     }
 
     public function logout(){
-
+        $cookie = Cookie::forget('cookie_token');
+        return response(["message"=>"Session close"], Response::HTTP_OK)->withCookie($cookie);
     }
     public function allUsers(){
-
+        $users = User::all();
+        return response()->json([
+            "users" => $users
+        ]);
     }
 }
