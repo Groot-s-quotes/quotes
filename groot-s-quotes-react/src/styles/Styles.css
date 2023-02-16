@@ -2,6 +2,7 @@
 @import url(../components/SignInButton/SignInButton.css);
 @import url(../components/LogInButton/LogInButton.css);
 @import url(../components/WatchQuotesButton/WatchQuotesButton.css);
+@import url(../components/SloganComponent/SloganComponent.css);
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
@@ -12,4 +13,12 @@
     --white-bone: #F0EBCE;
     --letter: 'Montserrat', sans-serif;
     --quotes-letter: 'Dancing Script', cursive;
+}
+
+body {
+    background-image: url(../assets/images/groot_bg1.png);
+    background-position: cover; 
+    background-attachment: fixed ; 
+    background-repeat: no-repeat;
+    text-align: center; 
 }
