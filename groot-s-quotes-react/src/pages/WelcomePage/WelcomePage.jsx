@@ -13,8 +13,10 @@ const WelcomePage = () => {
         
         </Header>
         <SloganComponent/>
+        <div className='wellcome-buttons'>
         <SignInButton/>
         <LogInButton/>
+        </div>
         <WatchQuotesButton/>
     </div>
   )

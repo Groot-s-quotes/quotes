@@ -27,5 +27,54 @@ class QuoteSeeder extends Seeder
             'oustanding' => true,
             'image' => 'assets/img/hello_world.jpg'
             ]);
+
+            DB::table('quotes')->insert([
+                'author_name' => 'Arthur Balfour',
+                'quote_text' => 'Enthusiasm moves the world',
+                'oustanding' => false,
+                'image' => 'assets/img/hello_world.jpg'
+                ]);
+
+                DB::table('quotes')->insert([
+                    'author_name' => 'Albert Einstein',
+                    'quote_text' => 'If you can\'t explain it simply, you don\'t understand it well enough',
+                    'oustanding' => false,
+                    'image' => 'assets/img/lincon.jpg'
+                    ]);
+            
+                    DB::table('quotes')->insert([
+                        'author_name' => 'Winston Churchill',
+                        'quote_text' => 'Success is not final, failure is not fatal: it is the courage to continue that counts',
+                        'oustanding' => true,
+                        'image' => 'assets/img/hello_world.jpg'
+                        ]);
+                        DB::table('quotes')->insert([
+                            'author_name' => 'Vince Lombardi',
+                            'quote_text' => 'The measure of who we are is what we do with what we have',
+                            'oustanding' => false,
+                            'image' => 'assets/img/lincon.jpg'
+                            ]);
+                    
+                            DB::table('quotes')->insert([
+                                'author_name' => 'John Lubbock',
+                                'quote_text' => 'A day of worry is more exhausting than a week of work',
+                                'oustanding' => true,
+                                'image' => 'assets/img/hello_world.jpg'
+                                ]);
+
+                                    DB::table('quotes')->insert([
+                                        'author_name' => 'Henry Ford',
+                                        'quote_text' => 'Whether you think you can or you think you can\’t, you\’re right',
+                                        'oustanding' => true,
+                                        'image' => 'assets/img/hello_world.jpg'
+                                        ]);
+
+                                    DB::table('quotes')->insert([
+                                        'author_name' => 'Joyce Meyer',
+                                        'quote_text' => 'You cannot have a positive life and a negative mind',
+                                        'oustanding' => true,
+                                        'image' => 'assets/img/hello_world.jpg'
+                                        ]);
+                       
     }
 }
