@@ -1,9 +1,14 @@
 import React from 'react';
-import './RegisterPage.css'
+import './RegisterPage.css';
+import Header from '../../components/Header/Header';
+import SignInButton from '../../components/SignInButton/SignInButton';
 
 const RegisterPage = () => {
   return (
-    <div>RegisterPage</div>
+    <div>
+      <Header/>
+      <SignInButton/>
+    </div>
   )
 }
 

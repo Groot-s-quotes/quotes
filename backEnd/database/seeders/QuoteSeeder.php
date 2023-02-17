@@ -58,7 +58,7 @@ class QuoteSeeder extends Seeder
                             DB::table('quotes')->insert([
                                 'author_name' => 'John Lubbock',
                                 'quote_text' => 'A day of worry is more exhausting than a week of work',
-                                'oustanding' => true,
+                                'oustanding' => false,
                                 'image' => 'assets/img/hello_world.jpg'
                                 ]);
 
