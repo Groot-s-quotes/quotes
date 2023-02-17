@@ -1,5 +1,12 @@
 .card {
     display:flex;
-    flex-direction: row;
-    width: 10rem;
+    flex-direction: column;
+    width: 800px;
+    background-color: var(--white-bone);
+}
+
+.quote-container {
+    display:flex;
+    justify-content: center;
+    
 }
