@@ -12,16 +12,17 @@
 
 .btn-39 span {
     position: relative;
-    width: 8px;
+    width: 27px;
     -webkit-transition: 0.5s ease-in-out;
     -o-transition: 0.5s ease-in-out;
     transition: 0.5s ease-in-out;
   }
+  
   .btn-39 span:nth-of-type(4) {
     width: 5px;
   }
   .btn-39 span:nth-of-type(6) {
-    width: 1px;
+    width: 2px;
   }
   .btn-39 span:nth-of-type(8) {
     width: 4px;
