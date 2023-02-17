@@ -1,8 +1,8 @@
 import React from 'react';
-import './LogInPage.css';
+import './LogPage.css';
 import Header from '../../components/Header/Header';
 
-const LogInPage = () => {
+const LogPage = () => {
   return (
     <div>
       <Header/>
@@ -10,4 +10,4 @@ const LogInPage = () => {
   )
 }
 
-export default LogInPage
+export default LogPage

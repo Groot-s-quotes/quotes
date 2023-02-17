@@ -1,6 +1,6 @@
 import WelcomePage from '../pages/WelcomePage/WelcomePage.jsx';
 /* import HomePage from '../pages/HomePage/HomePage.jsx'; */
-import LogInPage from '../pages/LogInPage/LogInPage.jsx';
+import LogPage from '../pages/LogPage/LogPage.jsx';
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import DashboardAdminPage from '../pages/DashboardAdminPage/DashboardAdminPage.jsx';
@@ -13,7 +13,7 @@ export default function Router() {
         <Routes>
           <Route path="/" element={<WelcomePage/>}/>
           {/* <Route path='/home' element={<HomePage/>}/> */}
-          <Route path='/login' element={<LogInPage/>}/>
+          <Route path='/login' element={<LogPage/>}/>
           <Route path='/admin' element={<DashboardAdminPage/>}/>
           <Route path='/create' element={<CreateQuoteFormPage/>}/>
           <Route path='/edit/:id' element={ <EditQuoteFormPage/> } />
