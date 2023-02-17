@@ -8,11 +8,17 @@ const getQuotes = async () => {
 }
 
 const createQuote = async () => {
-    const response = await axios.post(`${endpoint}/quote`)
+    const response = await axios.post(`${endpoint}/quote`);
+    return response.data.json;
+}
+
+const deleteQuote = async (id) => {
+    await axios.delete(`${endpoint}/quote/${id}`);
+    getQuotes();
 }
 
 export {
     getQuotes,
-    createQuote
-
+    createQuote,
+    deleteQuote
 }
