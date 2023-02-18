@@ -1,20 +1,20 @@
 import React from 'react';
 import '../../../src/styles/Styles.css';
 
-function PasswordLabel() {
+function PasswordLabel({handleInput, loginInput}) {
     return (
         <>
         <div className='form-box'>
-        <form autocomplete='off'>
             <div class='f5-input'>
                 <input
-                type='email'
+                type='password'
                 className='label-up'  
-                value='Write your password'
-            /> 
+                placeholder='Password' 
+                value={loginInput.password}
+                onChange={handleInput}/> 
             <label>Password</label>
+            <span>{loginInput.error_list.password}</span>
             </div>
-        </form>
         </div>
         </>
       )
