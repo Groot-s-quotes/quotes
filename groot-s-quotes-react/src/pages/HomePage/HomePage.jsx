@@ -3,6 +3,7 @@ import CarouselComponent from '../../components/CarouselComponent/CarouselCompon
 import Header from '../../components/Header/Header';
 import QuoteComponent from '../../components/QuoteComponent/QuoteComponent';
 import SearchComponent from '../../components/SearchComponent/SearchComponent';
+import PaginateComponent from '../../components/PaginateComponent/PaginateComponent';
 import './HomePage'
 
 const HomePage = () => {
@@ -13,6 +14,7 @@ const HomePage = () => {
       <CarouselComponent/>
       <SearchComponent/>
       <QuoteComponent/>
+      <PaginateComponent/>
     </div>
   )
 }

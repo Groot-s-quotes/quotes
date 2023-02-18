@@ -6,6 +6,7 @@
 @import url(../components/CarouselComponent/CarouselComponent.css);
 @import url(../components/QuoteComponent/QuoteComponent.css);
 @import url(../components/LikeComponent/LikeComponent.css);
+@import url(../components/PaginateComponent/PaginateComponent.css);
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
@@ -22,6 +23,7 @@ body, html {
     height: 100%;
     margin: 0;
     text-align: center;
+    color: var(--green-dark);
 }
 
 .bg {
