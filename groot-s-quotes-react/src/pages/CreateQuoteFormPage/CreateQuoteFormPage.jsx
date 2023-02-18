@@ -6,25 +6,43 @@ import Header from '../../components/Header/Header'
 const endpoint = "http://localhost:8000/api";
 function CreateQuoteFormPage() {
 
-  const [quote, setQuote] = useState('');
-  const [author, setAuthor] = useState('');
+  const [quote_text, setQuote] = useState('');
+  const [author_name, setAuthor] = useState('');
   const [oustanding, setOustanding] = useState(0);
-  const [image, setImage] = useState('');
+  const [imagedata, setImagedata] = useState('');
+
+  const handleChange = file => {
+    setImagedata(file[0]);
+  }
 
   const createQuote = async (e) => {
     e.preventDefault()
-    await axios.post(`${endpoint}/quote`, {author:author, quote:quote, oustanding:oustanding, image:image});
+    const fData = new FormData();
+    fData.append('image', imagedata);
+    fData.append('author_name', author_name);
+    fData.append('quote_text', quote_text);
+    fData.append('oustanding', oustanding);
+    await axios.post(`${endpoint}/quote`, fData);
+
+   
+    setTimeout(() => {
+      setAuthor("");
+      setQuote("");
+      setOustanding("");
+      setImagedata("");
+
+    }, 1000);
   }
 
   return (
     <div>
      <Header/>
         <h3>Add Quote</h3>
-        <form onSubmit={createQuote}>
+        <form onSubmit={createQuote} enctype='multipart/form-data'>
             <div className='mb-3'>
                 <label className='form-label'>Author</label>
                 <input 
-                    value={author}
+                    value={author_name}
                     onChange={ (e)=> setAuthor(e.target.value)}
                     type='text'
                     className='form-control'
@@ -33,7 +51,7 @@ function CreateQuoteFormPage() {
             <div className='mb-3'>
                 <label className='form-label'>Quotes</label>
                 <input
-                    value={quote}
+                    value={quote_text}
                     onChange={ (e)=> setQuote(e.target.value)}
                     type='text'
                     className='form-control'
@@ -50,12 +68,13 @@ function CreateQuoteFormPage() {
                 </select>
             </div>
             <div className='mb-3'>
-            <label className='form-label'>Upload</label>
+            <label htmlFor="image" className='form-label'>Upload</label>
             <input 
-              value= {image}
-              onChange={ (e)=> setImage(e.target.value)}
+              onChange={(e)=> handleChange(e.target.files)}
               type='file'
               className='form-control'
+              name='image'
+              id="image"
               />
             </div>
             <button type='submit' className='btn btn-primary'>Submit</button>

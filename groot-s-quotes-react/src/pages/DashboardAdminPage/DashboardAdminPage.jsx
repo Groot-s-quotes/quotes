@@ -13,7 +13,11 @@ function DashboardAdminPage() {
     useEffect(() => {
         getAllQuotes();
     }, []);
-    console.log(quotes);
+  
+    async function onDeleteQuote(id){
+        await deleteQuote(id);
+        await getAllQuotes();
+    }
   return (
     <div>
         <Header/>
@@ -34,12 +38,12 @@ function DashboardAdminPage() {
             <tbody>
                 { quotes.map( (quote) => (
                     <tr key={quote.id}>
-                        <td> <img src={quote.image} alt="" /> </td>    
+                        <td> <img src={`http:localhost:8000/${quote.image}`} alt="" /> </td>    
                         <td> {quote.quote_text} </td>    
                         <td> {quote.author_name} </td>    
                         <td>
                             <Link to={`/edit/${quote.id}`} className='btn btn-warning'>Edit</Link>
-                            <button onClick={ ()=>deleteQuote(quote.id) } className='btn btn-danger'>Delete</button>
+                            <button onClick={ ()=>onDeleteQuote(quote.id) } className='btn btn-danger'>Delete</button>
                         </td>
 
                     </tr>
