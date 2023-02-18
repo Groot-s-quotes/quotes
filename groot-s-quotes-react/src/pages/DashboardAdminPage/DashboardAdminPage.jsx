@@ -38,7 +38,7 @@ function DashboardAdminPage() {
             <tbody>
                 { quotes.map( (quote) => (
                     <tr key={quote.id}>
-                        <td> <img src={`http:localhost:8000/${quote.image}`} alt="" /> </td>    
+                        <td> <img src={`http://localhost:8000/uploadImg/${quote.image}`} alt="" /> </td>    
                         <td> {quote.quote_text} </td>    
                         <td> {quote.author_name} </td>    
                         <td>

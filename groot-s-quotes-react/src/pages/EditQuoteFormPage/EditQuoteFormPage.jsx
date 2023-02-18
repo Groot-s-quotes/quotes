@@ -1,7 +1,8 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Header from '../../components/Header/Header'
+import '../CreateQuoteFormPage/CreateQuoteFormPage.css'
 
 
 const endpoint = "http://localhost:8000/api";
@@ -38,49 +39,51 @@ function EditQuoteFormPage() {
   return (
     <div>
       <Header/>
-      <h3>Edit Quote</h3>
+      <h3 className='mb-3 mt-5 title-h3'>Edit Quote</h3>
+      <div  className='body'>
       <form onSubmit={updateQuote} enctype='multipart/form-data'>
-            <div className='mb-3'>
-                <label className='form-label'>Author</label>
+            <div className='mb-3 f5-input'>
                 <input 
                     value={author_name}
                     onChange={ (e)=> setAuthor(e.target.value)}
                     type='text'
-                    className='form-control'
+                    className='form-control label-up'
                 />
+                <label className='form-label'>Author</label>
             </div>
-            <div className='mb-3'>
-                <label className='form-label'>Quotes</label>
+            <div className='mb-3 f5-input'>
                 <input
                     value={quote_text}
                     onChange={ (e)=> setQuote(e.target.value)}
                     type='text'
-                    className='form-control'
+                    className='form-control label-up'
                     />
+                <label className='form-label'>Quotes</label>
             </div>
-            <div className='mb-3'>
-                <label className='form-label'>Oustanding</label>
+            <div className='mb-3 f5-input'>
                 <select name="select" value={oustanding} 
-                className='form-control' 
+                className='form-control label-up' 
                 >
                   <option value="">Choose an option</option>
                   <option value={1} onClick={ (e)=> setOustanding(e.target.value)}>Yes</option>
                   <option value={0} onClick={ (e)=> setOustanding(e.target.value)}>No</option>
                 </select>
+                <label className='form-label'>Oustanding</label>
             </div>
-            <div className='mb-3'>
-            <label className='form-label'>Upload</label>
+            <div className='mb-3 f5-input'>
             <input 
               value= {image}
               onChange={ (e)=> setImage(e.target.value)}
               type='file'
               name='image'
-              className='form-control'
+              className='form-control label-up'
               />
+            <label className='form-label'>Upload</label>
             </div>
             <button type='submit' className='btn btn-primary'>Update</button>
-            <button type='button' className='btn btn-secondary'>Cancel</button>
+            <Link to={'/admin'}><button type='button' className='btn btn-secondary'>Cancel</button></Link>
         </form>
+        </div>
     </div>
   )
 }
