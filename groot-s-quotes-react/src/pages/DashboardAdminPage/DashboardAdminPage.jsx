@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Header from '../../components/Header/Header'
 import { deleteQuote, getQuotes } from '../../services/Functions';
-
+const url = 'http://localhost:8000/uploadImg';
 function DashboardAdminPage() {
     const [quotes, setQuotes] = useState([]);
 
@@ -38,7 +38,7 @@ function DashboardAdminPage() {
             <tbody>
                 { quotes.map( (quote) => (
                     <tr key={quote.id}>
-                        <td> <img src={`http://localhost:8000/uploadImg/${quote.image}`} alt="" /> </td>    
+                        <td> <img src={`${url}/${quote.image}`} alt="" /> </td>    
                         <td> {quote.quote_text} </td>    
                         <td> {quote.author_name} </td>    
                         <td>

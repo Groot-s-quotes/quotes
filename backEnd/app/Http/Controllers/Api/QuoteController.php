@@ -60,4 +60,8 @@ class QuoteController extends Controller
         $quote = Quote::destroy($id);
         return $quote;
     }
+
+    public function search($author_name){
+        return Quote::where('author_name', 'like', '%'.$author_name.'%')->get();
+    }
 }

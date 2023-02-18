@@ -1,20 +1,22 @@
 import React from 'react';
-import '../../../src/styles/Styles.css';
+import './PasswordLabel';
 
 function PasswordLabel({handleInput, loginInput}) {
     return (
         <>
         <div className='form-box'>
-            <div class='f5-input'>
+            <div className='f5-input'>
                 <input
                 type='password'
                 className='label-up'  
                 placeholder='Password' 
                 value={loginInput.password}
-                onChange={handleInput}/> 
+                onChange={handleInput}
+                name="password"
+                /> 
             <label>Password</label>
-            <span>{loginInput.error_list.password}</span>
             </div>
+            <span>{loginInput.error_list.password}</span>
         </div>
         </>
       )

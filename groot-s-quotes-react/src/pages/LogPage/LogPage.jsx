@@ -28,7 +28,7 @@ const loginSubmit = (e) => {
       email: loginInput.email,
       password: loginInput.password,
   }
-  axios.get(`${endpoint}/sanctum/csrf-cookie`).then(response => {
+  axios.get('sanctum/csrf-cookie').then(response => {
     axios.post(`${endpoint}/login`, data).then(res => {
         if(res.data.status === 200)
         {
@@ -60,7 +60,7 @@ const loginSubmit = (e) => {
     <div>
       <Header/>
       <h1>Groot's Quotes Login</h1>
-      <form autocomplete='off' onSubmit={loginSubmit}>
+      <form onSubmit={loginSubmit}>
       <EmailLabel handleInput={handleInput}  loginInput={loginInput} />
       <PasswordLabel handleInput={handleInput} loginInput={loginInput}/>
       <StartButton loginSubmit={loginSubmit}/>
