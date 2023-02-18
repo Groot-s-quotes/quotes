@@ -6,6 +6,7 @@
 @import url(../components/CarouselComponent/CarouselComponent.css);
 @import url(../components/QuoteComponent/QuoteComponent.css);
 @import url(../components/LikeComponent/LikeComponent.css);
+@import url(../pages/DashboardAdminPage/DashboardAdminPage.css);
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
@@ -14,6 +15,8 @@
     --green: #4E6C50;
     --green-ligth: #B7B78A;
     --white-bone: #F0EBCE;
+    --red: #8E3A3A;
+    --yellow: #D3B443;
     --letter: 'Montserrat', sans-serif;
     --quotes-letter: 'Dancing Script', cursive;
 }
