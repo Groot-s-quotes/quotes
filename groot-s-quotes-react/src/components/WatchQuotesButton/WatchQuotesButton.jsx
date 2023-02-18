@@ -5,7 +5,9 @@ const WatchQuotesButton = () => {
   return (
     
     <div className="collection-1 btn-39">
-        <button className="button">
+        <button className="watch">
+          <span></span>
+          <span></span>
           <span>W</span>
           <span>a</span>
           <span>t</span>

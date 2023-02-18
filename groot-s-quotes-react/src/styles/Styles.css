@@ -4,6 +4,8 @@
 @import url(../components/WatchQuotesButton/WatchQuotesButton.css);
 @import url(../components/SloganComponent/SloganComponent.css);
 @import url(../components/CarouselComponent/CarouselComponent.css);
+@import url(../components/QuoteComponent/QuoteComponent.css);
+@import url(../components/LikeComponent/LikeComponent.css);
 @import url(../components/EmailLabel/EmailLabel.css);
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
@@ -17,10 +19,16 @@
     --quotes-letter: 'Dancing Script', cursive;
 }
 
-body {
+body, html {
+    height: 100%;
+    margin: 0;
+    text-align: center;
+}
+
+.bg {
     background-image: url(../assets/images/groot_bg1.jpg);
-    background-position: cover; 
-    background-attachment: fixed ; 
+    height: 100%; 
+    background-position: center;
     background-repeat: no-repeat;
-    text-align: center; 
+    background-size: cover;
 }
