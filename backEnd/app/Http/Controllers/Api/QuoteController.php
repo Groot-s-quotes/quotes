@@ -28,7 +28,7 @@ class QuoteController extends Controller
         $filename = $file->getClientOriginalName(); 
         $filename = date('His').$filename;
         
-        $request->file('image')->storeAs('upload_img/',$filename, 'public');
+        $request->file('image')->storeAs('uploadImg/',$filename, 'public');
         $quote->image = $filename;
        
 
