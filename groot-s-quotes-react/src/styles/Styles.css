@@ -5,8 +5,8 @@
 @import url(../components/SloganComponent/SloganComponent.css);
 @import url(../components/CarouselComponent/CarouselComponent.css);
 @import url(../components/QuoteComponent/QuoteComponent.css);
-@import url(../components/Email_si_Label/Email_si_Label.css);
-@import url(../components/Password_si_Label/Password_si_Label.css);
+@import url(../components/EEmailSignIn/EmailSignIn.css);
+@import url(../components/PasswordSignIn/PasswordSignIn.css);
 @import url(../components/PassConfLabel/PassConfLabel.css);
 @import url(../components/UserNameLabel/UserNameLabel.css);
 
