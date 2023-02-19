@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import Header from '../../components/Header/Header'
+import '../../../src/styles/Styles.css';
+import Navbar from '../../components/Navbar/Navbar';
 import { deleteQuote, getQuotes } from '../../services/Functions';
 const url = 'http://localhost:8000/uploadImg';
 function DashboardAdminPage() {
@@ -20,7 +21,7 @@ function DashboardAdminPage() {
     }
   return (
     <div>
-        <Header/>
+        <Navbar/>
         <div>
         <div className='d-grid gap-2'>
             <Link to="/create" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Create</Link>
