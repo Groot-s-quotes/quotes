@@ -1,0 +1,131 @@
+
+.body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    background-size: 20%;
+    background-repeat: no-repeat;
+    background-position: center top;   
+}
+
+.title-h3{
+color: var(--green-dark);
+font-family: var(--letter);
+font-weight: bold;
+font-size: 2rem;
+}
+
+.f5-input{
+    position: relative;
+    z-index: 1;
+    margin: 40px;
+}
+
+/* SEPARAR ELEMENTOS */
+
+.label-up{
+    display: inline-block;
+    width: 300px;
+    font-style: "Open Sans";
+    padding: 10px;
+    color: pink;
+    background-color: white;
+    border: 0;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    outline: 0;
+    text-indent: 60px;
+    transition: all .3s ease-in-out;
+    z-index: 2;
+    
+}
+
+
+
+.label-up::placeholder{
+    color: var(--green-dark);
+    text-indent: 70px;
+    opacity:0;
+    transition: all .3s;
+}
+
+
+
+.label-up + label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--green-dark);
+    font-family: "open sans";
+    color: white;
+    font-size: .8rem;
+    padding: 12.5px;
+    transition: transform .4s ease-in-out;
+    border-radius: 3px;
+    transform-origin: left bottom;
+    z-index: 2;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+
+}
+
+
+.label-up + label:after,.label-up + label:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform-origin: left bottom;
+      transition: all .4s ease-in-out;
+      pointer-events: none;
+      border-top-left-radius: 7px;
+      border-bottom-left-radius: 7px;   
+}
+
+.label-up + label:after {
+    background: var(--green-dark); 
+    z-index: -1; 
+}
+
+.label-up + label:before {
+    background: rgba(3,36,41,.2);
+    z-index: -2;
+   
+}
+
+/* ESTADO FOCUS */
+
+.label-up:focus{
+    text-indent: 0px;
+      
+}
+
+.label-up:focus::placeholder{
+    opacity: 1;
+    text-indent: 0px;
+}
+
+.label-up:focus + label{
+    transform: rotate(-66deg);
+
+}
+
+.label-up:focus + label:before{
+    transform: rotate(10deg);
+}
+
+
+/* ESTADO INVALIDO */
+
+.label-up:invalid{
+
+    box-shadow: 0 0 10px rgba(255, 4, 4, 0.2) ;
+    border: solid 1px rgba(255, 4, 4, 0.5) ;
+}
+

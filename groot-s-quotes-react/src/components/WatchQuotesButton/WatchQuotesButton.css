@@ -1,8 +1,14 @@
 .collection-3 {
     min-width: 150px;
     display: inline-flex;
-  }
-  
+}
+
+.watch {
+  margin: 5px; 
+  background-color: initial;
+  border: none;
+  color: var(--green-dark)
+} 
 
 .btn-39 span,
 .btn-39 > button {

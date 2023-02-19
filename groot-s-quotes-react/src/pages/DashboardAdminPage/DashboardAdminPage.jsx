@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import Header from '../../components/Header/Header'
+import '../../../src/styles/Styles.css';
+import Navbar from '../../components/Navbar/Navbar';
 import { deleteQuote, getQuotes } from '../../services/Functions';
-
+const url = 'http://localhost:8000/uploadImg';
 function DashboardAdminPage() {
     const [quotes, setQuotes] = useState([]);
 
@@ -13,10 +14,14 @@ function DashboardAdminPage() {
     useEffect(() => {
         getAllQuotes();
     }, []);
-    console.log(quotes);
+  
+    async function onDeleteQuote(id){
+        await deleteQuote(id);
+        await getAllQuotes();
+    }
   return (
     <div>
-        <Header/>
+        <Navbar/>
         <div>
         <div className='d-grid gap-2'>
             <Link to="/create" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Create</Link>
@@ -34,12 +39,12 @@ function DashboardAdminPage() {
             <tbody>
                 { quotes.map( (quote) => (
                     <tr key={quote.id}>
-                        <td> <img src={quote.image} alt="" /> </td>    
+                        <td> <img src={`${url}/${quote.image}`} alt="" /> </td>    
                         <td> {quote.quote_text} </td>    
                         <td> {quote.author_name} </td>    
                         <td>
                             <Link to={`/edit/${quote.id}`} className='btn btn-warning'>Edit</Link>
-                            <button onClick={ ()=>deleteQuote(quote.id) } className='btn btn-danger'>Delete</button>
+                            <button onClick={ ()=>onDeleteQuote(quote.id) } className='btn btn-danger'>Delete</button>
                         </td>
 
                     </tr>
