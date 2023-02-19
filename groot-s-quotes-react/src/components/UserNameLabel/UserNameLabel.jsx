@@ -5,7 +5,6 @@ function UserNameLabel() {
     return (
         <>
         <div className='form-box'>
-        <form autocomplete='off'>
             <div class='f5-input'>
                 <input
                 //REVISAR SI "TYPE" ESTÁ CORRECTO
@@ -15,7 +14,6 @@ function UserNameLabel() {
             /> 
             <label>Name</label>
             </div>
-        </form>
         </div>
         </>
       )

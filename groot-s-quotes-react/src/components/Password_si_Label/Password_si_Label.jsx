@@ -1,23 +1,21 @@
 import React from 'react';
 import '../../../src/styles/Styles.css';
 
-function EmailLabel() {
+function Password_si_Label() {
     return (
         <>
         <div className='form-box'>
-        <form autocomplete='off'>
             <div class='f5-input'>
                 <input
                 type='email'
                 className='label-up'  
-                value='Write your e-mail'
+                value='Write your password'
             /> 
-            <label>Email</label>
+            <label>Password</label>
             </div>
-        </form>
         </div>
         </>
       )
     }
 
-export default EmailLabel
+export default Password_si_Label

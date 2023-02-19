@@ -5,7 +5,6 @@ function PassConfLabel() {
     return (
         <>
         <div className='form-box'>
-        <form autocomplete='off'>
             <div class='f5-input'>
                 <input
                 type='email'
@@ -14,7 +13,6 @@ function PassConfLabel() {
             /> 
             <label>Password</label>
             </div>
-        </form>
         </div>
         </>
       )

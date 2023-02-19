@@ -1,3 +1,5 @@
+
+
 .form-box {
     display: flex;
     align-items: center;
@@ -28,8 +30,10 @@
     outline: 0;
     text-indent: 33%;
     transition: all .3s ease-in-out;
-    z-index: 2;  
+    z-index: 2;   
 }
+
+
 
 .label-up::placeholder{
     color: var(--green-dark);
@@ -37,6 +41,8 @@
     opacity:0;
     transition: all .3s;
 }
+
+
 
 .label-up + label {
     position: absolute;
@@ -54,6 +60,7 @@
     border-top-left-radius: 7px;
     border-bottom-left-radius: 7px;
 }
+
 
 .label-up + label:after,.label-up + label:before {
       content: "";
@@ -76,13 +83,14 @@
 
 .label-up + label:before {
     background: rgba(3,36,41,.2);
-    z-index: -2;  
+    z-index: -2;
+   
 }
 
 /* ESTADO FOCUS */
 
 .label-up:focus{
-    text-indent: 0px;      
+    text-indent: 0px; 
 }
 
 .label-up:focus::placeholder{
@@ -105,8 +113,6 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25) ;
     border: none;
 }
-
-
 
 
 
