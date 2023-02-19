@@ -7,19 +7,26 @@ import './Navbar.css';
 import Logout from '../Logout/Logout';
 import Collection from '../Collection/Collection';
 
+
 const instance = getAxiosInstance();
+instance.interceptors.request.use(function(config){
+    const token =localStorage.getItem('auth_token');
+    config.headers.Authorization = token ? `Bearer ${token}` : "";
+    return config;
+  }) 
+
 function Navbar() {
     const navigate = useNavigate;
     const logoutSubmit = (e) => {
         e.preventDefault();
         
-        instance.axios.post(`/api/logout`).then(res => {
+        instance.post(`/api/logout`).then(res => {
             if(res.data.status === 200)
             {
                 localStorage.removeItem('auth_token');
                 localStorage.removeItem('auth_name');
                 swal("Success",res.data.message,"success");
-                navigate('/');
+                navigate('/home');
             }
         });
 

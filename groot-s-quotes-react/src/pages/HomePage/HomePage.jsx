@@ -1,6 +1,6 @@
 import React from 'react';
 import CarouselComponent from '../../components/CarouselComponent/CarouselComponent';
-import Header from '../../components/Header/Header';
+import Navbar from '../../components/Navbar/Navbar';
 import QuoteComponent from '../../components/QuoteComponent/QuoteComponent';
 import SearchComponent from '../../components/SearchComponent/SearchComponent';
 import './HomePage'
@@ -8,7 +8,7 @@ import './HomePage'
 const HomePage = () => {
   return (
     <div className="-page">
-      <Header/>
+      <Navbar/>
       
       <CarouselComponent/>
       <SearchComponent/>

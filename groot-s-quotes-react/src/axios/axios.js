@@ -6,3 +6,4 @@ export function getAxiosInstance(endpoint = "http://localhost:8000") {
         baseURL: endpoint
     });
 }
+
