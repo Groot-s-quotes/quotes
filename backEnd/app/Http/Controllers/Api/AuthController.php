@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Hash;
 use Symfony\Component\HttpFoundation\Response;
@@ -30,21 +31,33 @@ class AuthController extends Controller
     }
 
     public function login(Request $request) {
-        $credentials = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required']
+        $credentials= Validator::make($request->all(),[
+            'email'=>'required|max:191',
+            'password'=>'required'
         ]);
-
-        if (Auth::attempt($credentials)){
-            $user = Auth::user();
-            $token = $user->createToken('token')->plainTextToken;
-            $cookie = cookie('cookie_token', $token, 60 * 24);
-            return response(["token"=>$token], Response::HTTP_OK)->withoutCookie($cookie);
+        if ($credentials->fails()){
+            return response()->json([
+                'validation_errors'=>$credentials->messages(),
+            ]);
         } else{
-            return response(["message"=>"Invalid credentials"], Response::HTTP_UNAUTHORIZED);
-        }
-    }
+            $user =User::where('email',$request->email)->first();
+            if(! $user || ! Hash::check($request->password, $user->password)){
+                return response()->json([
+                    'status'=>401,
+                    'message'=>'Invalid Credentials'
+                ]);
+            } else {
+                $token = $user->createToken($user->email.'_Token')->plainTextToken;
 
+                return response()->json([
+                    'status'=>200,
+                    'username'=>$user->name,
+                    'token'=>$token,
+                    'message'=>'Login Successfully'
+                ]);
+            }
+        } 
+} 
     public function userProfile(Request $request){
         return response()->json([
         "message" =>"userProfile OK",
