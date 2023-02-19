@@ -5,16 +5,12 @@
 @import url(../components/SloganComponent/SloganComponent.css);
 @import url(../components/CarouselComponent/CarouselComponent.css);
 @import url(../components/QuoteComponent/QuoteComponent.css);
-<<<<<<< HEAD
-@import url(../components/Email_si_Label/Email_si_Label.css);
-@import url(../components/Password_si_Label/Password_si_Label.css);
+@import url(../components/EEmailSignIn/EmailSignIn.css);
+@import url(../components/PasswordSignIn/PasswordSignIn.css);
 @import url(../components/PassConfLabel/PassConfLabel.css);
 @import url(../components/UserNameLabel/UserNameLabel.css);
-
-=======
 @import url(../components/LikeComponent/LikeComponent.css);
 @import url(../components/EmailLabel/EmailLabel.css);
->>>>>>> log-page
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 

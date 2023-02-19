@@ -22,4 +22,4 @@ function PasswordLabel({handleInput, loginInput}) {
       )
     }
 
-export default Password_si_Label
+export default PasswordLabel
