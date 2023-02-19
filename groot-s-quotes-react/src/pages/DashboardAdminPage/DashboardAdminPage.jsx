@@ -13,17 +13,21 @@ function DashboardAdminPage() {
     useEffect(() => {
         getAllQuotes();
     }, []);
-    console.log(quotes);
+  
+    async function onDeleteQuote(id){
+        await deleteQuote(id);
+        await getAllQuotes();
+    }
   return (
     <div>
         <Header/>
         <div>
         <div className='d-grid gap-2'>
-            <Link to="/create" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Create</Link>
+            <Link to="/create" className='collection-1 btn-5'>Create</Link>
         </div>
 
         <table className='table table-striped'>
-            <thead className='bg-primary text-white'>
+            <thead className='dash-table'>
                 <tr>
                     <th>Image</th>
                     <th>Quote</th>
@@ -34,12 +38,12 @@ function DashboardAdminPage() {
             <tbody>
                 { quotes.map( (quote) => (
                     <tr key={quote.id}>
-                        <td> <img src={quote.image} alt="" /> </td>    
+                        <td> <img src={`http://localhost:8000/uploadImg/${quote.image}`} alt="" /> </td>    
                         <td> {quote.quote_text} </td>    
                         <td> {quote.author_name} </td>    
                         <td>
-                            <Link to={`/edit/${quote.id}`} className='btn btn-warning'>Edit</Link>
-                            <button onClick={ ()=>deleteQuote(quote.id) } className='btn btn-danger'>Delete</button>
+                            <Link to={`/edit/${quote.id}`} className='btn yellow-button'>Edit</Link>
+                            <button onClick={ ()=>onDeleteQuote(quote.id) } className='btn red-button'>Delete</button>
                         </td>
 
                     </tr>
