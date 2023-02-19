@@ -1,18 +1,22 @@
 import React from 'react';
-import '../../../src/styles/Styles.css';
+import './PasswordLabel';
 
-function Password_si_Label() {
+function PasswordLabel({handleInput, loginInput}) {
     return (
         <>
         <div className='form-box'>
-            <div class='f5-input'>
+            <div className='f5-input'>
                 <input
-                type='email'
+                type='password'
                 className='label-up'  
-                value='Write your password'
-            /> 
+                placeholder='Password' 
+                value={loginInput.password}
+                onChange={handleInput}
+                name="password"
+                /> 
             <label>Password</label>
             </div>
+            <span>{loginInput.error_list.password}</span>
         </div>
         </>
       )

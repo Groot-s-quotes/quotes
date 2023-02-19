@@ -24,3 +24,5 @@ Route::controller(QuoteController::class)->group(function () {
     Route::put('/quote/{id}', 'update');
     Route::delete('/quote/{id}', 'destroy');
 });
+
+Route::get('/quotes/search/{author_name}', [QuoteController::class, 'search']);
