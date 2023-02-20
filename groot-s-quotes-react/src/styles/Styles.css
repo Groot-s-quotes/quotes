@@ -1,0 +1,39 @@
+@import url(../components/Header/Header.css);
+@import url(../components/SignInButton/SignInButton.css);
+@import url(../components/LogInButton/LogInButton.css);
+@import url(../components/WatchQuotesButton/WatchQuotesButton.css);
+@import url(../components/SloganComponent/SloganComponent.css);
+@import url(../components/CarouselComponent/CarouselComponent.css);
+@import url(../components/QuoteComponent/QuoteComponent.css);
+@import url(../components/LikeComponent/LikeComponent.css);
+@import url(../components/EmailLabel/EmailLabel.css);
+@import url(../components/PaginateComponent/PaginateComponent.css);
+@import url(../pages/DashboardAdminPage/DashboardAdminPage.css);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+:root{
+    --green-dark: #395144;
+    --green: #4E6C50;
+    --green-ligth: #B7B78A;
+    --white-bone: #F0EBCE;
+    --red: #8E3A3A;
+    --yellow: #D3B443;
+    --letter: 'Montserrat', sans-serif;
+    --quotes-letter: 'Dancing Script', cursive;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    text-align: center;
+    color: var(--green-dark);
+}
+
+.bg {
+    background-image: url(../assets/images/groot_bg1.jpg);
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
