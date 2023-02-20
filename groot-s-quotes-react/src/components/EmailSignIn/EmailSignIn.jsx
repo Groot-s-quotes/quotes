@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../../src/styles/Styles.css';
 
-function EmailSignIn() {
+function EmailSignIn({registerInput, handleInput}) {
   return (
     <>
         <div className='form-box'>
@@ -10,12 +10,13 @@ function EmailSignIn() {
                 type='email'
                 className='label-up'
                 placeholder='Email'  
-                value=''
-                onChange=''
+                value= {registerInput.email}
+                onChange= {handleInput}
                 name="email"
             /> 
             <label>Email</label>
             </div>
+            <span>{registerInput.error_list.email}</span>
         </div>
         </>
   )

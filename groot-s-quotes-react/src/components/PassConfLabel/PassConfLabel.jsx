@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../../src/styles/Styles.css';
 
-function PassConfLabel() {
+function PassConfLabel({registerInput, handleInput}) {
     return (
         <>
         <div className='form-box'>
@@ -9,10 +9,13 @@ function PassConfLabel() {
                 <input
                 type='email'
                 className='label-up'  
-                value='Repeat your password'
+                value= {registerInput.password}
+                onChange= {handleInput}
+                name= 'passwordConfirmation'
             /> 
             <label>Password</label>
             </div>
+            <span>{registerInput.error_list.password}</span>
         </div>
         </>
       )

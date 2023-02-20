@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../../src/styles/Styles.css';
 
-function PasswordSignIn() {
+function PasswordSignIn({registerInput, handleInput}) {
     return (
         <>
         <div className='form-box'>
@@ -10,12 +10,13 @@ function PasswordSignIn() {
                 type='password'
                 className='label-up'  
                 placeholder='Password' 
-                value='Write your password'
-                onChange=''
+                value= {registerInput.password}
+                onChange= {handleInput}
                 name="password"
                 /> 
             <label>Password</label>
             </div>
+            <span>{registerInput.error_list.password}</span>
         </div>
         </>
       )

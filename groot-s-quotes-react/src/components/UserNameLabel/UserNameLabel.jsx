@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../../src/styles/Styles.css';
 
-function UserNameLabel() {
+function UserNameLabel({registerInput, handleInput}) {
     return (
         <>
         <div className='form-box'>
@@ -10,10 +10,12 @@ function UserNameLabel() {
                 //REVISAR SI "TYPE" ESTÁ CORRECTO
                 type='name'
                 className='label-up'  
-                value='Write your name'
+                value= {registerInput.name}
+                onChange= {handleInput}
             /> 
             <label>Name</label>
             </div>
+            <span>{registerInput.error_list.name}</span>
         </div>
         </>
       )
