@@ -9,18 +9,20 @@ const QuoteComponent = () => {
 
     const getAllQuotes = async () => {
         const allQuotes = await getQuotes();
-        setQuotes(allQuotes);
+        setQuotes(allQuotes.data);
+        
     }
     useEffect(() => {
         getAllQuotes();
     }, []);
+    console.log(quotes)
   return (
       <div className="quote-container">
         <div className="card">
           { quotes!== null ? (
             quotes.map((quote)=> (
-              <div className="quote-like-container">
-                <div key={quote.id}>
+              <div className="quote-like-container" key={quote.id}>
+                <div>
                   <div className="card mb-3">
                     <div className="row g-0">
                       <div className="col-md-4">

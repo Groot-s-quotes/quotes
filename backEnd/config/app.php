@@ -199,7 +199,9 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+
     | ClassNameName Aliases
+
     |--------------------------------------------------------------------------
     |
     | This array of class aliases will be registered when this application
@@ -210,6 +212,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClassNameName' => App\Example\ExampleClassNameName::class,
+
     ])->toArray(),
 
 ];
