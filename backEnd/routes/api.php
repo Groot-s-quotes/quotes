@@ -19,7 +19,8 @@ Route::get('users', [AuthController::class,'allUsers']);
 
 
 Route::controller(QuoteController::class)->group(function () {
-    Route::get('/quotes', 'index');
+    Route::get('/quotes/{page}', 'index');
+    Route::get('/num-quotes', 'numQuotes');
     Route::post('/quote', 'store');
     Route::get('/quote/{id}', 'show');
     Route::put('/quote/{id}', 'update');

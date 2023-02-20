@@ -20,3 +20,7 @@
 .header-text {
     color: var(--white-bone);
 }
+
+.logo-text {
+    width: 40%;
+}
