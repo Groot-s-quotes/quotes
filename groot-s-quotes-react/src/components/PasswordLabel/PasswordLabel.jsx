@@ -1,5 +1,5 @@
 import React from 'react';
-import './PasswordLabel';
+import '../../../src/styles/Styles.css';
 
 function PasswordLabel({handleInput, loginInput}) {
     return (
