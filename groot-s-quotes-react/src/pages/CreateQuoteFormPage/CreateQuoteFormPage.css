@@ -27,20 +27,21 @@ font-size: 2rem;
 
 .label-up{
     display: inline-block;
-    width: 300px;
-    font-style: "Open Sans";
+    width: 400px;
     padding: 10px;
-    color: pink;
-    background-color: white;
+    color: var(--green-ligth);
+    background-color: var(--white-bone);
     border: 0;
     border-bottom-right-radius: 30px;
     border-top-right-radius: 30px;
     border-top-left-radius: 7px;
     border-bottom-left-radius: 7px;
     outline: 0;
-    text-indent: 60px;
+    text-indent: 33%;
     transition: all .3s ease-in-out;
     z-index: 2;
+    font-size: 1.2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) ;
     
 }
 
@@ -60,9 +61,8 @@ font-size: 2rem;
     top: 0;
     left: 0;
     background-color: var(--green-dark);
-    font-family: "open sans";
-    color: white;
-    font-size: .8rem;
+    color: var(--white-bone);
+    font-size: 1rem;
     padding: 12.5px;
     transition: transform .4s ease-in-out;
     border-radius: 3px;
@@ -125,7 +125,7 @@ font-size: 2rem;
 
 .label-up:invalid{
 
-    box-shadow: 0 0 10px rgba(255, 4, 4, 0.2) ;
-    border: solid 1px rgba(255, 4, 4, 0.5) ;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25) ;
+    border: none;
 }
 

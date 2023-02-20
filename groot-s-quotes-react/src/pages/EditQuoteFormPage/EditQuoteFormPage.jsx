@@ -47,7 +47,7 @@ function EditQuoteFormPage() {
                     value={author_name}
                     onChange={ (e)=> setAuthor(e.target.value)}
                     type='text'
-                    className='form-control label-up'
+                    className='label-up'
                 />
                 <label className='form-label'>Author</label>
             </div>
@@ -56,7 +56,7 @@ function EditQuoteFormPage() {
                     value={quote_text}
                     onChange={ (e)=> setQuote(e.target.value)}
                     type='text'
-                    className='form-control label-up'
+                    className='label-up'
                     />
                 <label className='form-label'>Quotes</label>
             </div>
@@ -76,7 +76,7 @@ function EditQuoteFormPage() {
               onChange={ (e)=> setImage(e.target.value)}
               type='file'
               name='image'
-              className='form-control label-up'
+              className='label-up'
               />
             <label className='form-label'>Upload</label>
             </div>
