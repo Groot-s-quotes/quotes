@@ -57,6 +57,7 @@ const RegisterPage = () => {
   return (
     <div>
       <Header/> 
+      <h1 className='mt-5'>Register here</h1>
       <form autoComplete='off' onSubmit={registerSubmit}>
         <UserNameLabel registerInput={registerInput} handleInput={handleInput}/>
         <EmailSignIn registerInput={registerInput} handleInput={handleInput}/>
