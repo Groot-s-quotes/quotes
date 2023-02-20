@@ -28,11 +28,12 @@ class QuoteController extends Controller
         $filename = $file->getClientOriginalName(); 
         $filename = date('His').$filename;
         
-        $request->file('image')->storeAs('uploadImg/',$filename, 'public');
+        $request->file('image')->storeAs($filename, 'public');
         $quote->image = $filename;
        
 
         $quote->save();
+        return $quote;
     }
 
     
@@ -59,5 +60,9 @@ class QuoteController extends Controller
     {
         $quote = Quote::destroy($id);
         return $quote;
+    }
+
+    public function search($author_name){
+        return Quote::where('author_name', 'like', '%'.$author_name.'%')->get();
     }
 }
