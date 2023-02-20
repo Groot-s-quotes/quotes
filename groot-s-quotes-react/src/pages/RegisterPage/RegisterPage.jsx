@@ -3,8 +3,6 @@ import './RegisterPage.css';
 import swal from 'sweetalert';
 import Header from '../../components/Header/Header';
 import UserNameLabel from '../../components/UserNameLabel/UserNameLabel';
-import PassConfLabel from '../../components/PassConfLabel/PassConfLabel';
-import SignInButton from '../../components/SignInButton/SignInButton';
 import EmailSignIn from '../../components/EmailSignIn/EmailSignIn';
 import PasswordSignIn from '../../components/PasswordSignIn/PasswordSignIn';
 import { getAxiosInstance } from '../../axios/axios';
@@ -59,12 +57,11 @@ const RegisterPage = () => {
   return (
     <div>
       <Header/> 
-      <form autocomplete='off' onSubmit={registerSubmit}>
+      <form autoComplete='off' onSubmit={registerSubmit}>
         <UserNameLabel registerInput={registerInput} handleInput={handleInput}/>
         <EmailSignIn registerInput={registerInput} handleInput={handleInput}/>
         <PasswordSignIn registerInput={registerInput} handleInput={handleInput}/>
-        <PassConfLabel registerInput={registerInput} handleInput={handleInput}/>
-        <SignInButton/>
+        <button type="submit" className='collection-1 btn-5'>Sign In</button>
       </form>
     </div>
   )

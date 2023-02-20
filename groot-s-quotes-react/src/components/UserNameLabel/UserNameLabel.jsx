@@ -5,7 +5,7 @@ function UserNameLabel({registerInput, handleInput}) {
     return (
         <>
         <div className='form-box'>
-            <div class='f5-input'>
+            <div className='f5-input'>
                 <input
                 //REVISAR SI "TYPE" ESTÁ CORRECTO
                 type='text'

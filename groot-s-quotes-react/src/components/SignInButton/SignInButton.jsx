@@ -4,7 +4,7 @@ import '../../../src/styles/Styles.css';
 const SignInButton = () => {
   return (
     <>
-        <a href={'/'} className='collection-1 btn-5'>
+        <a href={'/signin'} className='collection-1 btn-5'>
             <span>Sign In</span>
         </a>
     </>
