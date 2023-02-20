@@ -1,6 +1,6 @@
 import React from 'react';
 import { getAxiosInstance } from "../../axios/axios";
-import { Link, useNavigate} from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import swal from 'sweetalert';
 import GrootLogo from '../../assets/images/groot_logo.png'
 import './Navbar.css';
@@ -16,7 +16,6 @@ instance.interceptors.request.use(function(config){
   }) 
 
 function Navbar() {
-    const navigate = useNavigate();
     const logoutSubmit = (e) => {
         e.preventDefault();
         
@@ -26,7 +25,7 @@ function Navbar() {
                 localStorage.removeItem('auth_token');
                 localStorage.removeItem('auth_name');
                 swal("Success",res.data.message,"success");
-                navigate('/home');
+                window.location = '/home';
             }
         });
 
