@@ -1,0 +1,22 @@
+.header-container{
+    padding: 1vh;
+    background-color: var(--green-dark);
+    font-family: var(--letter);
+    width: 100%;
+}
+
+.groot {
+    height: 60px;
+    background-color: var(--white-bone);
+}
+
+.groot-container {
+    padding: 0.5%;
+    background-color: var(--white-bone);
+    border-radius:20%;
+    margin: 1%;
+}
+
+.header-text {
+    color: var(--white-bone);
+}
