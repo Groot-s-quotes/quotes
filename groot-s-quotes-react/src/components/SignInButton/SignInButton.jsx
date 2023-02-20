@@ -4,7 +4,7 @@ import '../../../src/styles/Styles.css';
 const SignInButton = (props) => {
   return (
     <>
-        <a href={'/'} className={`${props.class} collection-1 btn-5`}>
+        <a href={'/signin'} className='collection-1 btn-5'>
             <span>Sign In</span>
         </a>
     </>

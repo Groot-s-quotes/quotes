@@ -9,7 +9,7 @@ function DashboardAdminPage() {
 
     const getAllQuotes = async () => {
         const allQuotes = await getQuotes();
-        setQuotes(allQuotes);
+        setQuotes(allQuotes.data);
     }
     useEffect(() => {
         getAllQuotes();
