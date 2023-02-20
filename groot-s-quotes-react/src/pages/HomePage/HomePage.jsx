@@ -1,21 +1,31 @@
 import React from 'react';
+import './HomePage'
 import CarouselComponent from '../../components/CarouselComponent/CarouselComponent';
 import Header from '../../components/Header/Header';
 import QuoteComponent from '../../components/QuoteComponent/QuoteComponent';
 import SearchComponent from '../../components/SearchComponent/SearchComponent';
 import PaginateComponent from '../../components/PaginateComponent/PaginateComponent';
-import './HomePage'
+import LikeComponent from '../../components/LikeComponent/LikeComponent';
+import SignInButton from '../../components/SignInButton/SignInButton';
+import LogInButton from '../../components/LogInButton/LogInButton';
 
 const HomePage = () => {
   return (
-    <div className="-page">
-      <Header/>
-      
+    <>
+      <div class="">
+        <Header>
+        <div class="d-flex ">
+          <LikeComponent/>
+          <SignInButton class="text-color"/>
+          <LogInButton/>
+        </div>
+        </Header>
+      </div>
       <CarouselComponent/>
       <SearchComponent/>
       <QuoteComponent/>
       <PaginateComponent/>
-    </div>
+    </>
   )
 }
 

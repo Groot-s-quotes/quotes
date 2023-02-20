@@ -1,10 +1,10 @@
 import React from 'react';
 import '../../../src/styles/Styles.css';
 
-const SignInButton = () => {
+const SignInButton = (props) => {
   return (
     <>
-        <a href={'/'} className='collection-1 btn-5'>
+        <a href={'/'} className={`${props.class} collection-1 btn-5`}>
             <span>Sign In</span>
         </a>
     </>
@@ -12,3 +12,7 @@ const SignInButton = () => {
 }
 
 export default SignInButton
+
+SignInButton.defaultProps = {
+  text: 'Mi botón',
+}

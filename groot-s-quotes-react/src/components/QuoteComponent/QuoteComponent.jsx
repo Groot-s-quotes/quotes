@@ -9,11 +9,13 @@ const QuoteComponent = () => {
 
     const getAllQuotes = async () => {
         const allQuotes = await getQuotes();
-        setQuotes(allQuotes);
+        setQuotes(allQuotes.data);
+        
     }
     useEffect(() => {
         getAllQuotes();
     }, []);
+    console.log(quotes)
   return (
       <div className="quote-container">
         <div className="card">
