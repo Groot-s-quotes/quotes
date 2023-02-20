@@ -8,10 +8,11 @@ function UserNameLabel({registerInput, handleInput}) {
             <div class='f5-input'>
                 <input
                 //REVISAR SI "TYPE" ESTÁ CORRECTO
-                type='name'
+                type='text'
                 className='label-up'  
                 value= {registerInput.name}
                 onChange= {handleInput}
+                name='name'
             /> 
             <label>Name</label>
             </div>

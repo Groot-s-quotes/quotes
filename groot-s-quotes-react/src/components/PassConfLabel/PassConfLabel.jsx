@@ -5,10 +5,11 @@ function PassConfLabel({registerInput, handleInput}) {
     return (
         <>
         <div className='form-box'>
-            <div class='f5-input'>
+            <div className='f5-input'>
                 <input
-                type='email'
-                className='label-up'  
+                type='password'
+                className='label-up' 
+                placeholder='password'
                 value= {registerInput.password}
                 onChange= {handleInput}
                 name= 'passwordConfirmation'
