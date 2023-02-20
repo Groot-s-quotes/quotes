@@ -1,7 +1,7 @@
 import WelcomePage from '../pages/WelcomePage/WelcomePage.jsx';
 import HomePage from '../pages/HomePage/HomePage.jsx';
 import RegisterPage from '../pages/RegisterPage/RegisterPage.jsx';
-//import LogPage from '../pages/LogPage/LogPage.jsx';
+import LogPage from '../pages/LogPage/LogPage.jsx';
 import React from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import DashboardAdminPage from '../pages/DashboardAdminPage/DashboardAdminPage.jsx';

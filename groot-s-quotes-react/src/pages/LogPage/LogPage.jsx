@@ -8,7 +8,6 @@ import swal from "sweetalert";
 import { getAxiosInstance } from "../../axios/axios";
 import { useNavigate } from "react-router-dom";
 
-/* import { useHistory } from 'react-router-dom'; */
 
 const instance = getAxiosInstance();
 const LogPage = () => {
