@@ -12,20 +12,11 @@ import LogInButton from '../../components/LogInButton/LogInButton';
 const HomePage = () => {
   return (
     <>
-      <div class="">
-        <Header>
-         <Navbar/>
-        <div class="d-flex ">
-          <LikeComponent/>
-          <SignInButton class="text-color"/>
-          <LogInButton/>
-        </div>
-        </Header>
-      </div>
-      <CarouselComponent/>
-      <SearchComponent/>
-      <QuoteComponent/>
-      <PaginateComponent/>
+        <Navbar/>
+        <CarouselComponent/>
+        <SearchComponent/>
+        <QuoteComponent/>
+        <PaginateComponent/>
     </>
   )
 }
