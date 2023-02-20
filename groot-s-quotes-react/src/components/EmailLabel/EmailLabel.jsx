@@ -2,7 +2,6 @@ import React from 'react';
 import '../../../src/styles/Styles.css';
 
 function EmailLabel({handleInput, loginInput}) {
-    console.log(loginInput);
     return (
         <>
         <div className='form-box'>
