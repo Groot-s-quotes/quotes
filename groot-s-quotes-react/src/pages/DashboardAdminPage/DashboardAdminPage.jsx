@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import Header from '../../components/Header/Header'
+import '../../../src/styles/Styles.css';
+import Navbar from '../../components/Navbar/Navbar';
 import { deleteQuote, getQuotes } from '../../services/Functions';
-
+const url = 'http://localhost:8000/storage';
 function DashboardAdminPage() {
     const [quotes, setQuotes] = useState([]);
 
@@ -20,7 +21,7 @@ function DashboardAdminPage() {
     }
   return (
     <div>
-        <Header/>
+        <Navbar/>
         <div>
         <div className='d-grid gap-2'>
             <Link to="/create" className='collection-1 btn-5'>Create</Link>
@@ -38,7 +39,7 @@ function DashboardAdminPage() {
             <tbody>
                 { quotes.map( (quote) => (
                     <tr key={quote.id}>
-                        <td> <img src={`http://localhost:8000/uploadImg/${quote.image}`} alt="" /> </td>    
+                        <td> <img src={`http://127.0.0.1:8000/storage/${quote.image}`} alt="" /> </td>    
                         <td> {quote.quote_text} </td>    
                         <td> {quote.author_name} </td>    
                         <td>

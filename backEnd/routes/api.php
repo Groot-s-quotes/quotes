@@ -1,5 +1,6 @@
 <?php
 
+
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\QuoteController;
 use Illuminate\Http\Request;
@@ -24,3 +25,6 @@ Route::controller(QuoteController::class)->group(function () {
     Route::put('/quote/{id}', 'update');
     Route::delete('/quote/{id}', 'destroy');
 });
+
+Route::get('/quotes/search/{author_name}', [QuoteController::class, 'search']);
+

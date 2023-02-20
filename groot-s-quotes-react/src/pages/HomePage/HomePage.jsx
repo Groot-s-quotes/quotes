@@ -1,7 +1,7 @@
 import React from 'react';
 import './HomePage'
 import CarouselComponent from '../../components/CarouselComponent/CarouselComponent';
-import Header from '../../components/Header/Header';
+import Navbar from '../../components/Navbar/Navbar';
 import QuoteComponent from '../../components/QuoteComponent/QuoteComponent';
 import SearchComponent from '../../components/SearchComponent/SearchComponent';
 import PaginateComponent from '../../components/PaginateComponent/PaginateComponent';
@@ -14,6 +14,7 @@ const HomePage = () => {
     <>
       <div class="">
         <Header>
+         <Navbar/>
         <div class="d-flex ">
           <LikeComponent/>
           <SignInButton class="text-color"/>
