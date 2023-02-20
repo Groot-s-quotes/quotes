@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../../src/styles/Styles.css';
 
-function PasswordLabel({handleInput, loginInput}) {
+function PasswordSignIn({registerInput, handleInput}) {
     return (
         <>
         <div className='form-box'>
@@ -10,16 +10,16 @@ function PasswordLabel({handleInput, loginInput}) {
                 type='password'
                 className='label-up'  
                 placeholder='Password' 
-                value={loginInput.password}
-                onChange={handleInput}
+                value= {registerInput.password}
+                onChange= {handleInput}
                 name="password"
                 /> 
             <label>Password</label>
             </div>
-            <span>{loginInput.error_list.password}</span>
+            <span>{registerInput.error_list.password}</span>
         </div>
         </>
       )
     }
 
-export default PasswordLabel
+export default PasswordSignIn
