@@ -14,10 +14,8 @@ export default function Router() {
         <Routes>
           <Route path="/" element={<WelcomePage/>}/>
           <Route path='/home' element={<HomePage/>}/> 
-        {/*   <Route path='/signin' element={<RegisterPage/>}/>
-          {/* <Route path='/login' element={<LogPage/>}/> */}
+          <Route path='/signin' element={<RegisterPage/>}/>
           <Route path='/login' element={localStorage.getItem('auth_token') ? <Navigate to='/admin'/> : <LogPage/>} />
- */}
           <Route path='/admin' element={<DashboardAdminPage/>}/>
           <Route path='/create' element={<CreateQuoteFormPage/>}/>
           <Route path='/edit/:id' element={ <EditQuoteFormPage/> } />
