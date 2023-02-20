@@ -11,11 +11,11 @@ class QuoteController extends Controller
 
     public function index()
     {
-       $quotes = Quote::all();
+       $quotes = Quote::paginate(3);
        return $quotes;
     }
 
-    
+
     public function store(Request $request)
     {
         $quote = new Quote();
@@ -25,24 +25,24 @@ class QuoteController extends Controller
 
         var_dump($request->hasFile('image'));
         $file = $request->file('image');
-        $filename = $file->getClientOriginalName(); 
+        $filename = $file->getClientOriginalName();
         $filename = date('His').$filename;
-        
+
         $request->file('image')->storeAs('uploadImg/',$filename, 'public');
         $quote->image = $filename;
-       
+
 
         $quote->save();
     }
 
-    
+
     public function show($id)
     {
        $quote = Quote::find($id);
        return $quote;
     }
 
-    
+
     public function update(Request $request, $id)
     {
         $quote = Quote::findOrFail($request->id);
@@ -54,7 +54,7 @@ class QuoteController extends Controller
         return $quote;
     }
 
-   
+
     public function destroy($id)
     {
         $quote = Quote::destroy($id);
