@@ -13,7 +13,7 @@ export default function Router() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<WelcomePage/>}/>
-          <Route path='/home' element={<HomePage/>}/> 
+          <Route path='/home/:page?' element={<HomePage/>}/> 
           <Route path='/signin' element={<RegisterPage/>}/>
           <Route path='/login' element={localStorage.getItem('auth_token') ? <Navigate to='/admin'/> : <LogPage/>} />
           <Route path='/admin' element={<DashboardAdminPage/>}/>
