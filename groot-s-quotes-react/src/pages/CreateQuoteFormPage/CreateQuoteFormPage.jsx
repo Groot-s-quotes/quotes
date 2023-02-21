@@ -11,7 +11,7 @@ function CreateQuoteFormPage() {
 
   const [quote_text, setQuote] = useState('');
   const [author_name, setAuthor] = useState('');
-  const [oustanding, setOustanding] = useState("");
+  const [oustanding, setOustanding] = useState(0);
   const [imagedata, setImagedata] = useState(null);
 
   useEffect(() => {
@@ -19,15 +19,14 @@ function CreateQuoteFormPage() {
   }, []);
 
   const handleChange = files => {
-    setImagedata(() => files[0]);
+    setImagedata(files[0].name);
     console.log(files[0])
-    console.log(imagedata)
   }
-
+  
   const createQuote = async (e) => {
     e.preventDefault()
     const fData = new FormData();
-    fData.append('image', document.getElementById('image').files);
+    fData.append('image', imagedata);
     fData.append('author_name', author_name);
     fData.append('quote_text', quote_text);
     fData.append('oustanding', oustanding);
@@ -70,12 +69,12 @@ function CreateQuoteFormPage() {
                 <label className='form-label'>Quotes</label>
             </div>
             <div className='mb-3 f5-input'>
-                <select defaultValue={oustanding} name="select" 
+                <select defaultValue={oustanding} onChange={ (e)=> setOustanding(e.target.value)} name="select" 
                 className='form-control label-up' 
                 >
                   <option value="" >Choose an option</option>
-                  <option value={oustanding} onClick={ (e)=> setOustanding(e.target.value)}>Yes</option>
-                  <option value={oustanding} onClick={ (e)=> setOustanding(e.target.value)}>No</option>
+                  <option value= {1} >Yes</option>
+                  <option value={0}>No</option>
                 </select>
                 <label className='form-label'>Oustanding</label>
             </div>
