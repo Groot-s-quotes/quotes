@@ -22,3 +22,7 @@
 .header-text {
     color: var(--white-bone);
 }
+
+.navbar-buttons{
+    background-color: var(--white-bone);
+}

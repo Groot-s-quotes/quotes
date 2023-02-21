@@ -41,7 +41,7 @@ function EditQuoteFormPage() {
       <Header/>
       <h3 className='mb-3 mt-5 title-h3'>Edit Quote</h3>
       <div  className='body'>
-      <form onSubmit={updateQuote} enctype='multipart/form-data'>
+      <form onSubmit={updateQuote}>
             <div className='mb-3 f5-input'>
                 <input 
                     value={author_name}
@@ -81,7 +81,7 @@ function EditQuoteFormPage() {
             <label className='form-label'>Upload</label>
             </div>
             <button type='submit' className='btn btn-primary'>Update</button>
-            <Link to={'/admin'}><button type='button' className='btn btn-secondary'>Cancel</button></Link>
+            <Link to={'/admin'}><button type='button' className='btn btn-secondary mx-2'>Cancel</button></Link>
         </form>
         </div>
     </div>

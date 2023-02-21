@@ -22,14 +22,15 @@ class QuoteController extends Controller
         $quote->author_name = $request->author_name;
         $quote->quote_text = $request->quote_text;
         $quote->oustanding = $request->oustanding;
+        $quote->image = $request->image;
 
-        var_dump($request->hasFile('image'));
-        $file = $request->file('image');
-        $filename = $file->getClientOriginalName();
-        $filename = date('His').$filename;        
-        $request->file('image')->storeAs($filename, 'public');
-
-        $quote->image = $filename;
+       if($request->hasFile('image')){
+           $file = $request->file('image'); 
+           $filename = $file->getClientOriginalName();
+           $filename = date('His').$filename;        
+           $request->file('image')->storeAs('uploadImg',$filename, 'public');
+           $quote->image = $filename;
+        }
 
 
         $quote->save();

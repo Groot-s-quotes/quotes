@@ -1,30 +1,37 @@
-import axios from 'axios';
-import React, { useState } from 'react'
+
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
+import { getAxiosInstance } from '../../axios/axios';
 import Header from '../../components/Header/Header'
 import './CreateQuoteFormPage.css'
 
-
+const instance = getAxiosInstance();
 const endpoint = "http://localhost:8000/api";
 function CreateQuoteFormPage() {
 
   const [quote_text, setQuote] = useState('');
   const [author_name, setAuthor] = useState('');
-  const [oustanding, setOustanding] = useState(0);
-  const [imagedata, setImagedata] = useState('');
+  const [oustanding, setOustanding] = useState("");
+  const [imagedata, setImagedata] = useState(null);
 
-  const handleChange = file => {
-    setImagedata(file[0]);
+  useEffect(() => {
+    instance.get('/sanctum/csrf-cookie');
+  }, []);
+
+  const handleChange = files => {
+    setImagedata(() => files[0]);
+    console.log(files[0])
+    console.log(imagedata)
   }
 
   const createQuote = async (e) => {
     e.preventDefault()
     const fData = new FormData();
-    fData.append('image', imagedata);
+    fData.append('image', document.getElementById('image').files);
     fData.append('author_name', author_name);
     fData.append('quote_text', quote_text);
     fData.append('oustanding', oustanding);
-    await axios.post(`${endpoint}/quote`, fData);
+    await instance.post(`${endpoint}/quote`, fData);
 
    
     setTimeout(() => {
@@ -41,7 +48,7 @@ function CreateQuoteFormPage() {
      <Header/>
         <h3 className='mb-3 mt-5 title-h3'>Add Quote</h3>
         <div className='body'>
-        <form onSubmit={createQuote} enctype='multipart/form-data'>
+        <form onSubmit={createQuote} encType="multipart/form-data">
             <div className='mb-3 f5-input'>
                 <input 
                     value={author_name}
@@ -63,10 +70,10 @@ function CreateQuoteFormPage() {
                 <label className='form-label'>Quotes</label>
             </div>
             <div className='mb-3 f5-input'>
-                <select name="select" 
+                <select defaultValue={oustanding} name="select" 
                 className='form-control label-up' 
                 >
-                  <option value="Choose an option" selected>Choose an option</option>
+                  <option value="" >Choose an option</option>
                   <option value={oustanding} onClick={ (e)=> setOustanding(e.target.value)}>Yes</option>
                   <option value={oustanding} onClick={ (e)=> setOustanding(e.target.value)}>No</option>
                 </select>
@@ -83,7 +90,7 @@ function CreateQuoteFormPage() {
             <label htmlFor="image" className='form-label'>Upload</label>
             </div>
             <button type='submit' className='btn btn-primary'>Submit</button>
-            <Link to={'/admin'}><button type='button' className='btn btn-secondary'>Cancel</button></Link>
+            <Link to={'/admin'}><button type='button' className='btn btn-secondary mx-2'>Cancel</button></Link>
         </form>
         </div>
     </div>
