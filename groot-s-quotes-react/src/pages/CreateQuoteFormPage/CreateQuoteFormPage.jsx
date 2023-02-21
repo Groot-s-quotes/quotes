@@ -53,7 +53,7 @@ function CreateQuoteFormPage() {
                     value={author_name}
                     onChange={ (e)=> setAuthor(e.target.value)}
                     type='text'
-                    className='form-control label-up'
+                    className=' label-up'
                     placeholder='Author name'
                 />
                 <label className='form-label'>Author</label>
@@ -63,7 +63,7 @@ function CreateQuoteFormPage() {
                     value={quote_text}
                     onChange={ (e)=> setQuote(e.target.value)}
                     type='text'
-                    className='form-control label-up'
+                    className='label-up'
                     placeholder='Quote'
                     />
                 <label className='form-label'>Quotes</label>
@@ -82,7 +82,7 @@ function CreateQuoteFormPage() {
             <input 
               onChange={(e)=> handleChange(e.target.files)}
               type='file'
-              className='form-control label-up'
+              className='label-up'
               name='image'
               id="image"
               />

@@ -9,10 +9,19 @@ use Illuminate\Http\Request;
 class QuoteController extends Controller
 {
 
-    public function index()
+    public function index($page)
     {
-       $quotes = Quote::paginate(3);
-       return $quotes;
+        $offset = ($page - 1) * 3;
+        $quotes = Quote::select('*')
+            ->offset($offset)
+            ->limit(3)
+            ->get();
+        return $quotes;
+    }
+
+    public function numQuotes()
+    {
+        return Quote::all()->count();
     }
 
 
@@ -24,6 +33,7 @@ class QuoteController extends Controller
         $quote->oustanding = $request->oustanding;
         $quote->image = $request->image;
 
+
        if($request->hasFile('image')){
            $file = $request->file('image'); 
            $filename = $file->getClientOriginalName();
@@ -31,7 +41,6 @@ class QuoteController extends Controller
            $request->file('image')->storeAs('uploadImg',$filename, 'public');
            $quote->image = $filename;
         }
-
 
         $quote->save();
         return $quote;
