@@ -9,6 +9,11 @@ const getNumQuotes = async () => {
   return response.data;
 };
 
+const getQuotes = async (page) => {
+  const response = await axios.get(`${endpoint}/quotes/${page}`);
+  return response.data;
+};
+
 export {
-  getQuotes
+  getQuotes, getNumQuotes
 };
