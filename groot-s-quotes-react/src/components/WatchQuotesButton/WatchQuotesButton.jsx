@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../../../src/styles/Styles.css';
 
 const WatchQuotesButton = () => {
   return (
     
-    <div className="collection-1 btn-39">
+    <Link to={'/home'} className="collection-1 btn-39">
         <button className="watch">
           <span></span>
           <span></span>
@@ -22,7 +23,7 @@ const WatchQuotesButton = () => {
           <span>e</span>
           <span>s</span>
         </button>
-    </div>
+    </Link>
 
     
   )

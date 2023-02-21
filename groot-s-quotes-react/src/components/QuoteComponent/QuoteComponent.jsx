@@ -1,26 +1,15 @@
 import React from 'react';
 import '../../../src/styles/Styles.css';
-import { getQuotes } from '../../services/Functions';
-import { useState, useEffect } from 'react';
+
 import LikeComponent from '../LikeComponent/LikeComponent';
 
-const QuoteComponent = () => {
-  const [quotes, setQuotes] = useState([]);
-
-    const getAllQuotes = async () => {
-        const allQuotes = await getQuotes();
-        setQuotes(allQuotes.data);
-        
-    }
-    useEffect(() => {
-        getAllQuotes();
-    }, []);
-    console.log(quotes)
+const QuoteComponent = (props) => {
+ 
   return (
       <div className="quote-container">
         <div className="card">
-          { quotes!== null ? (
-            quotes.map((quote)=> (
+          { props.quotes!== null ? (
+            props.quotes.map((quote)=> (
               <div className="quote-like-container" key={quote.id}>
                 <div>
                   <div className="card mb-3">
