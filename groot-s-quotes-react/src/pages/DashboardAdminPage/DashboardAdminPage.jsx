@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../../../src/styles/Styles.css';
+import { getAxiosInstance } from '../../axios/axios';
 import Navbar from '../../components/Navbar/Navbar';
-import { deleteQuote, getQuotes } from '../../services/Functions';
-const url = 'http://localhost:8000/storage';
+import { getQuotes } from '../../services/Functions';
+import swal from "sweetalert";
+
+const instance = getAxiosInstance();
+const endpoint = "http://localhost:8000/api";
 function DashboardAdminPage() {
     const [quotes, setQuotes] = useState([]);
 
@@ -12,13 +16,16 @@ function DashboardAdminPage() {
         setQuotes(allQuotes.data);
     }
     useEffect(() => {
+        instance.get('/sanctum/csrf-cookie');
         getAllQuotes();
     }, []);
   
     async function onDeleteQuote(id){
-        await deleteQuote(id);
+        await instance.delete(`${endpoint}/quote/${id}`);
         await getAllQuotes();
+        swal("Success","Your quote has been deleted","success"); 
     }
+
   return (
     <div>
         <Navbar/>
