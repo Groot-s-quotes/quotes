@@ -1,28 +1,36 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import '../../../src/styles/Styles.css';
 import { getAxiosInstance } from '../../axios/axios';
 import Navbar from '../../components/Navbar/Navbar';
-import { getQuotes } from '../../services/Functions';
 import swal from "sweetalert";
+import { getNumQuotes, getQuotes } from '../../services/Functions';
+import AdminPagination from '../../components/AdminPagination/AdminPagination'
 
 const instance = getAxiosInstance();
 const endpoint = "http://localhost:8000/api";
 function DashboardAdminPage() {
     const [quotes, setQuotes] = useState([]);
+    
+  const [numPages, setNumPages] = useState(0);
+  const {page = 1} = useParams();
 
-    const getAllQuotes = async () => {
-        const allQuotes = await getQuotes();
-        setQuotes(allQuotes.data);
-    }
+  const retrieveQuotes = async () => {
+    const numQuotes = await getNumQuotes();
+    const quotes = await getQuotes(page);
+
+    setQuotes(quotes);
+    setNumPages(Math.ceil(numQuotes / 3));
+    
+}
     useEffect(() => {
         instance.get('/sanctum/csrf-cookie');
-        getAllQuotes();
+        retrieveQuotes();
     }, []);
   
     async function onDeleteQuote(id){
         await instance.delete(`${endpoint}/quote/${id}`);
-        await getAllQuotes();
+        await  retrieveQuotes();
         swal("Success","Your quote has been deleted","success"); 
     }
 
@@ -58,6 +66,7 @@ function DashboardAdminPage() {
                 )) }
             </tbody>
         </table>
+        <AdminPagination numPages={numPages} page={page}/>
     </div>
 
     </div>
