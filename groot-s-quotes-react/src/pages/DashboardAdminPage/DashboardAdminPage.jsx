@@ -58,7 +58,7 @@ function DashboardAdminPage() {
                         <td> <img src={`http://127.0.0.1:8000/storage/${quote.image}`} alt="" /> </td>    
                         <td> {quote.quote_text} </td>    
                         <td> {quote.author_name} </td>    
-                        <td>
+                        <td className='buttons-table'>
                             <Link to={`/edit/${quote.id}`} className='btn yellow-button'>Edit</Link>
                             <button onClick={ ()=>onDeleteQuote(quote.id) } className='btn red-button'>Delete</button>
                         </td>
@@ -66,7 +66,6 @@ function DashboardAdminPage() {
                     </tr>
                 )) }
             </tbody>
-            <PaginateComponent/>
         </table>
         <AdminPagination numPages={numPages} page={page}/>
     </div>
