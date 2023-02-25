@@ -55,8 +55,8 @@ function DashboardAdminPage() {
             <tbody>
                 { quotes.map( (quote) => (
                     <tr key={quote.id}>
-                        <td> <img src={`http://127.0.0.1:8000/storage/${quote.image}`} alt="" /> </td>    
-                        <td> {quote.quote_text} </td>    
+                        <td> <img src={quote.image} alt="" /> </td>    
+                        <td className='quote-fontfamily'> {quote.quote_text} </td>    
                         <td> {quote.author_name} </td>    
                         <td className='buttons-table'>
                             <Link to={`/edit/${quote.id}`} className='btn yellow-button'>Edit</Link>
