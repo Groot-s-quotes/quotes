@@ -34,7 +34,7 @@ function EditQuoteFormPage() {
         setQuote(response.data.quote_text);
         setAuthor(response.data.author_name);
         setOustanding(response.data.oustanding);
-        
+        setImage(response.data.image)
     }
     getQuoteById();
     //eslint-disable-next-line react-hooks/exhaustive-deps
@@ -79,11 +79,11 @@ function EditQuoteFormPage() {
             <input 
               value= {image}
               onChange={ (e)=> setImage(e.target.value)}
-              type='file'
+              type='text'
               name='image'
               className='label-up'
               />
-            <label className='form-label'>Upload</label>
+            <label className='form-label'>Image URL</label>
             </div>
             <button type='submit' className='btn btn-primary'>Update</button>
             <Link to={'/admin'}><button type='button' className='btn btn-secondary mx-2'>Cancel</button></Link>
