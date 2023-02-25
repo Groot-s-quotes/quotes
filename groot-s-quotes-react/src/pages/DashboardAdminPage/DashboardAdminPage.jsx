@@ -5,7 +5,8 @@ import { getAxiosInstance } from '../../axios/axios';
 import Navbar from '../../components/Navbar/Navbar';
 import swal from "sweetalert";
 import { getNumQuotes, getQuotes } from '../../services/Functions';
-import AdminPagination from '../../components/AdminPagination/AdminPagination'
+import AdminPagination from '../../components/AdminPagination/AdminPagination';
+
 
 const instance = getAxiosInstance();
 const endpoint = "http://localhost:8000/api";
@@ -65,10 +66,11 @@ function DashboardAdminPage() {
                     </tr>
                 )) }
             </tbody>
+            <PaginateComponent/>
         </table>
         <AdminPagination numPages={numPages} page={page}/>
     </div>
-
+        
     </div>
   )
 }
