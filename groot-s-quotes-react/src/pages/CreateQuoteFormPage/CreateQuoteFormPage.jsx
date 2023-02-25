@@ -17,11 +17,6 @@ function CreateQuoteFormPage() {
   useEffect(() => {
     instance.get('/sanctum/csrf-cookie');
   }, []);
-
-  const handleChange = files => {
-    setImagedata(files[0].name);
-    console.log(files[0])
-  }
   
   const createQuote = async (e) => {
     e.preventDefault()
@@ -80,13 +75,15 @@ function CreateQuoteFormPage() {
             </div>
             <div className='mb-3 f5-input'>
             <input 
-              onChange={(e)=> handleChange(e.target.files)}
-              type='file'
+              onChange={(e)=> setImagedata(e.target.value)}
+              type='text'
               className='label-up'
+              value={imagedata}
               name='image'
               id="image"
+              placeholder='Add an image URL here'
               />
-            <label htmlFor="image" className='form-label'>Upload</label>
+            <label htmlFor="image" className='form-label'>Image URL</label>
             </div>
             <button type='submit' className='btn btn-primary'>Submit</button>
             <Link to={'/admin'}><button type='button' className='btn btn-secondary mx-2'>Cancel</button></Link>
