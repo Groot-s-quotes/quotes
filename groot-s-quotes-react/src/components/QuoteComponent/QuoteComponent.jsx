@@ -3,13 +3,13 @@ import '../../../src/styles/Styles.css';
 
 import LikeComponent from '../LikeComponent/LikeComponent';
 
-const QuoteComponent = (props) => {
+const QuoteComponent = ({quotes, addToCollection}) => {
  
   return (
       <div className="quote-container">
         <div className="card">
-          { props.quotes!== null ? (
-            props.quotes.map((quote)=> (
+          { quotes!== null ? (
+            quotes.map((quote)=> (
               <div className="quote-like-container" key={quote.id}>
                 <div>
                   <div className="card mb-3">
@@ -26,7 +26,7 @@ const QuoteComponent = (props) => {
                     </div>
                   </div>
                 </div>
-                <LikeComponent/>
+                <LikeComponent addToCollection={addToCollection} quote={quote} />
               </div>
             ))):
             ('There is no Quotes')

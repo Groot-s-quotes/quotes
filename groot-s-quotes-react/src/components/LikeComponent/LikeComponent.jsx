@@ -2,11 +2,12 @@ import React from 'react';
 import '../../../src/styles/Styles.css';
 import { useState } from 'react';
 
-const LikeComponent = () => {
+const LikeComponent = ({addToCollection, quote}) => {
     const [isActive, setActive] = useState("false");
 
     const ToggleClass = () => {
         setActive(!isActive); 
+        addToCollection(quote);
     };
     
     return ( 
