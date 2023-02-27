@@ -13,19 +13,7 @@ const getQuotes = async (page) => {
   const response = await axios.get(`${endpoint}/quotes/${page}`);
   return response.data;
 };
-/* const createQuote = async (author, quote, oustanding, image) => {
-    const response = await axios.post(`${endpoint}/quote`, {author:author, quote:quote, oustanding:false, image:image});
-    return response.data.json;
-} */
-
-const deleteQuote = async (id) => {
-  await axios.delete(`${endpoint}/quote/${id}`);
-  getQuotes();
-};
 
 export {
-  getQuotes,
-  /* createQuote, */
-  deleteQuote,
-  getNumQuotes,
+  getQuotes, getNumQuotes
 };

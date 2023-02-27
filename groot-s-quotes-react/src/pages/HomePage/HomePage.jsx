@@ -35,6 +35,7 @@ const HomePage = () => {
       <QuoteComponent quotes={quotes}/>
       <PaginateComponent numPages={numPages} page={page}/>
     </>
+
   )
 }
 

@@ -1,24 +1,40 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import '../../../src/styles/Styles.css';
+import { getAxiosInstance } from '../../axios/axios';
 import Navbar from '../../components/Navbar/Navbar';
-import { deleteQuote, getQuotes } from '../../services/Functions';
-const url = 'http://localhost:8000/storage';
+import swal from "sweetalert";
+import { getNumQuotes, getQuotes } from '../../services/Functions';
+import AdminPagination from '../../components/AdminPagination/AdminPagination';
+
+
+const instance = getAxiosInstance();
+const endpoint = "http://localhost:8000/api";
 function DashboardAdminPage() {
     const [quotes, setQuotes] = useState([]);
+    
+  const [numPages, setNumPages] = useState(0);
+  const {page = 1} = useParams();
 
-    const getAllQuotes = async () => {
-        const allQuotes = await getQuotes();
-        setQuotes(allQuotes);
-    }
+  const retrieveQuotes = async () => {
+    const numQuotes = await getNumQuotes();
+    const quotes = await getQuotes(page);
+
+    setQuotes(quotes);
+    setNumPages(Math.ceil(numQuotes / 3));
+    
+}
     useEffect(() => {
-        getAllQuotes();
+        instance.get('/sanctum/csrf-cookie');
+        retrieveQuotes();
     }, []);
   
     async function onDeleteQuote(id){
-        await deleteQuote(id);
-        await getAllQuotes();
+        await instance.delete(`${endpoint}/quote/${id}`);
+        await  retrieveQuotes();
+        swal("Success","Your quote has been deleted","success"); 
     }
+
   return (
     <div>
         <Navbar/>
@@ -39,10 +55,10 @@ function DashboardAdminPage() {
             <tbody>
                 { quotes.map( (quote) => (
                     <tr key={quote.id}>
-                        <td> <img src={`http://127.0.0.1:8000/storage/${quote.image}`} alt="" /> </td>    
-                        <td> {quote.quote_text} </td>    
+                        <td> <img src={quote.image} alt="" /> </td>    
+                        <td className='quote-fontfamily'> {quote.quote_text} </td>    
                         <td> {quote.author_name} </td>    
-                        <td>
+                        <td className='buttons-table'>
                             <Link to={`/edit/${quote.id}`} className='btn yellow-button'>Edit</Link>
                             <button onClick={ ()=>onDeleteQuote(quote.id) } className='btn red-button'>Delete</button>
                         </td>
@@ -51,8 +67,9 @@ function DashboardAdminPage() {
                 )) }
             </tbody>
         </table>
+        <AdminPagination numPages={numPages} page={page}/>
     </div>
-
+        
     </div>
   )
 }

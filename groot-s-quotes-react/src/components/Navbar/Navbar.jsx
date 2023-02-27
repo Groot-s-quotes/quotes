@@ -5,7 +5,6 @@ import swal from 'sweetalert';
 import GrootLogo from '../../assets/images/groot_logo.png'
 import './Navbar.css';
 import Logout from '../Logout/Logout';
-import Collection from '../Collection/Collection';
 
 
 const instance = getAxiosInstance();
@@ -37,10 +36,10 @@ function Navbar() {
         AuthButtons = (
             <ul className="navbar-nav">
                 <li className="nav-item">
-                    <Link className="nav-link" to="/login">Login</Link>
+                    <Link className='btn navbar-buttons mx-2 mb-2' to="/login">Login</Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link" to="/register">Register</Link>
+                    <Link className='btn navbar-buttons ' to="/signin">Sign In</Link>
                 </li>
             </ul>
         );
@@ -68,12 +67,9 @@ function Navbar() {
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li className="nav-item">
-                    <Link className="nav-link active" to="/">Home</Link>
-                </li>
-                <li className="nav-item">
-                    <Collection/>
-                </li>
+{/*                 <li className="nav-item">
+                    <Link className='btn navbar-buttons mr-1' to="/">Home</Link>
+                </li> */}
                 {AuthButtons}
             </ul>
         </div>
