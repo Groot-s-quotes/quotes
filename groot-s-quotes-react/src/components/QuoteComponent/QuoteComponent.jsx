@@ -6,8 +6,8 @@ import LikeComponent from '../LikeComponent/LikeComponent';
 const QuoteComponent = (props) => {
  
   return (
-      <div className="quote-container">
-        <div className="card">
+      <div className="quote-container d-flex justify-content-center mt-5">
+        <div className="card mt-2">
           { props.quotes!== null ? (
             props.quotes.map((quote)=> (
               <div className="quote-like-container" key={quote.id}>
@@ -32,10 +32,7 @@ const QuoteComponent = (props) => {
             ('There is no Quotes')
           }
         </div>
-      </div>
-        
-        
-    
+      </div>  
   )
 }
 

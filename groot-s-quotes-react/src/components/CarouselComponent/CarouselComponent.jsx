@@ -3,7 +3,7 @@ import '../../../src/styles/Styles.css';
 
 const CarouselComponent = () => {
   return (
-<div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
+<div id="carouselExampleControls" className="carousel slide mt-5" data-bs-ride="carousel">
   <div className="carousel-inner">
     <div className="carousel-item active">
         <h1>Steve Jobs</h1>
