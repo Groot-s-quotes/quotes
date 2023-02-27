@@ -1,13 +1,19 @@
 import React from 'react'
+import { useState} from 'react';
 
-const SearchComponent = () => {
-  return (
-    <div className="input-group mb-3">
+const SearchComponent = (props) => {
+  const {handleSubmit, handleInputChange} = props;
+
+  return ( 
+    <form onSubmit={handleSubmit}>
+      <div className="input-group mb-3">
         <div className="input-group-prepend">
-            <button className="btn btn-outline-secondary" type="button">Button</button>
+            <input type="submit" className="btn btn-outline-secondary" value="Search" />
         </div>
-            <input type="text" className="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1"/>
-    </div>
+            <input type="text" name="author" className="form-control" placeholder="author" aria-label="" aria-describedby="basic-addon1" onChange={handleInputChange}/>
+      </div>
+    </form>
+    
   
   )
 }

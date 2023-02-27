@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Quote;
 use Illuminate\Http\Request;
+use DB;
 
 class QuoteController extends Controller
 {
@@ -16,11 +17,18 @@ class QuoteController extends Controller
             ->offset($offset)
             ->limit(3)
             ->get();
+
         return $quotes;
     }
 
-    public function numQuotes()
+    public function numQuotes(Request $request)
     {
+        $authorName = $request->query('author');
+
+        if ($authorName) {
+            return $this->searchByAuthor($authorName)->count();
+        }
+
         return Quote::all()->count();
     }
 
@@ -32,8 +40,9 @@ class QuoteController extends Controller
         $quote->quote_text = $request->quote_text;
         $quote->oustanding = $request->oustanding;
         $quote->image = $request->image;
-        
+
         $quote->save();
+
         return $quote;
     }
 
@@ -41,6 +50,7 @@ class QuoteController extends Controller
     public function show($id)
     {
        $quote = Quote::find($id);
+
        return $quote;
     }
 
@@ -53,6 +63,7 @@ class QuoteController extends Controller
         $quote->oustanding = $request->oustanding;
         $quote->image = $request->image;
         $quote->save();
+
         return $quote;
     }
 
@@ -60,10 +71,25 @@ class QuoteController extends Controller
     public function destroy($id)
     {
         $quote = Quote::destroy($id);
+
         return $quote;
     }
 
-    public function search($author_name){
-        return Quote::where('author_name', 'like', '%'.$author_name.'%')->get();
+    public function search(Request $request)
+    {
+        $authorName = $request->query('author');
+
+        return $this->searchByAuthor($authorName);
+    }
+
+    private function searchByAuthor($authorName)
+    {
+        return Quote::select('*')
+            ->where(
+                DB::raw('lower(author_name)'),
+                'LIKE',
+                '%'.strtolower($authorName).'%',
+            )
+            ->get();
     }
 }
