@@ -25,6 +25,7 @@ img{
  width: 7rem;
  height: 7rem;
 }
+
 .quote-fontfamily{
     font-size: 1.3rem;
     font-family: var( --quotes-letter);
