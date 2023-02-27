@@ -47,9 +47,21 @@ function Navbar() {
     else
     {
         AuthButtons = (
+            <>
+                <li className="nav-item">
+                    <Link className='btn navbar-buttons mb-2' to="/home">Home</Link>
+                </li>
+                <li className="nav-item">
+                    <Link className='btn navbar-buttons mx-2 mb-2' to="/admin">Admin</Link>
+                </li>
+             <li className="nav-item">
+             <Link className='btn navbar-buttons  mb-2' to="/collections">Collections</Link>
+         </li>
+
             <li className="nav-item">
                 <Logout logoutSubmit={logoutSubmit}/>
             </li>
+        </>
         );
     }
   return (
@@ -67,9 +79,7 @@ function Navbar() {
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-{/*                 <li className="nav-item">
-                    <Link className='btn navbar-buttons mr-1' to="/">Home</Link>
-                </li> */}
+
                 {AuthButtons}
             </ul>
         </div>

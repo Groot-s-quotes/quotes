@@ -10,11 +10,14 @@ import Navbar from '../../components/Navbar/Navbar';
 import QuoteComponent from '../../components/QuoteComponent/QuoteComponent';
 import SearchComponent from '../../components/SearchComponent/SearchComponent';
 import PaginateComponent from '../../components/PaginateComponent/PaginateComponent';
+import { QuotesProvider } from '../../context/QuotesContext';
+
 
 const HomePage = () => {
   const [quotes, setQuotes] = useState([]);
   const [numPages, setNumPages] = useState(0);
   const {page = 1} = useParams();
+ 
 
   const retrieveQuotes = async () => {
       const numQuotes = await getNumQuotes();
@@ -24,17 +27,20 @@ const HomePage = () => {
       setNumPages(Math.ceil(numQuotes / 3));
       
   }
+
   useEffect(() => {
       retrieveQuotes();
   }, []);
+
+  
   return (
-    <>
+    <QuotesProvider>
       <Navbar/>
       <CarouselComponent/>
       <SearchComponent/>
-      <QuoteComponent quotes={quotes}/>
+      <QuoteComponent quotes={quotes} />
       <PaginateComponent numPages={numPages} page={page}/>
-    </>
+    </QuotesProvider>
 
   )
 }

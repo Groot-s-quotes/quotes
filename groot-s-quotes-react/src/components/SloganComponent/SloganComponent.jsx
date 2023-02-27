@@ -5,7 +5,7 @@ const SloganComponent = () => {
   return (
     <div className='intro-container'>
       <h1>Groot's Quotes</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus eu lectus ac euismod. Mauris imperdiet arcu a vestibulum interdum. Proin dignissim magna in laoreet iaculis. Pellentesque a auctor sem. Fusce vitae nisl maximus, scelerisque nibh sit amet, commodo urna. Etiam vitae dictum dolor. Vestibulum eu ultricies odio, a finibus quam. Sed feugiat elementum sapien, ut blandit nisi suscipit at.</p>
+      <p>At groot's qotes we inspire your inspiration, with quotes from great authors, great anonymous quotes and not least your own quotes to inspire other users. Register and be part of the groot community, create your own dashboart with the phrases you like the most.</p>
     </div>
   )
 }

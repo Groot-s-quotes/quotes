@@ -7,6 +7,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import DashboardAdminPage from '../pages/DashboardAdminPage/DashboardAdminPage.jsx';
 import CreateQuoteFormPage from '../pages/CreateQuoteFormPage/CreateQuoteFormPage.jsx';
 import EditQuoteFormPage from '../pages/EditQuoteFormPage/EditQuoteFormPage.jsx';
+import CollectionsPage from '../pages/CollectionsPage/CollectionsPage.jsx';
 
 export default function Router() {
     return (
@@ -19,6 +20,7 @@ export default function Router() {
           <Route path='/admin/:page?' element={<DashboardAdminPage/>}/>
           <Route path='/create' element={<CreateQuoteFormPage/>}/>
           <Route path='/edit/:id' element={ <EditQuoteFormPage/> } />
+          <Route path='/collections' element={<CollectionsPage/>}/>
         </Routes>
       </BrowserRouter>
     )
