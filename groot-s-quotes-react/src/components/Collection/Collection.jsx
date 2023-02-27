@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { QuotesContext } from '../../context/QuotesContext'
-
+import './Collection.css';
 
 function Collection() {
   const {quotesItem} = useContext(QuotesContext);

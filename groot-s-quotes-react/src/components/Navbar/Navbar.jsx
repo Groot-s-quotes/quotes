@@ -48,6 +48,12 @@ function Navbar() {
     {
         AuthButtons = (
             <>
+                <li className="nav-item">
+                    <Link className='btn navbar-buttons mb-2' to="/home">Home</Link>
+                </li>
+                <li className="nav-item">
+                    <Link className='btn navbar-buttons mx-2 mb-2' to="/admin">Admin</Link>
+                </li>
              <li className="nav-item">
              <Link className='btn navbar-buttons  mb-2' to="/collections">Collections</Link>
          </li>
