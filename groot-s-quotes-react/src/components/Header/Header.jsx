@@ -4,8 +4,8 @@ import GrootLogo from '../../assets/images/groot_logo.png'
 
 const Header = (props) => {
   return (
-    <div className="d-flex align-items-center justify-content-between header-container">
-      <div className="logo-text d-flex align-items-center">
+    <div className="navbar header-container">
+      <div className="logo-text d-flex align-items-center w-75">
         <div className="groot-container">
           <img src={GrootLogo} alt='Groot logo' className='groot'/>
         </div>

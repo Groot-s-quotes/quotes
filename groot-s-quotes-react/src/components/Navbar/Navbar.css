@@ -1,11 +1,10 @@
 .header-container{
-    padding: 1vh;
     display: flex;
     align-items: center;
-    padding: 1vh;
     background-color: var(--green-dark) !important;
     font-family: var(--letter);
     width: 100%;
+    height: 20vh;
 }
 
 .groot {
@@ -32,4 +31,5 @@
 
 .logo-text {
     width: 40%;
+    margin-left: 9.5vh;
 }

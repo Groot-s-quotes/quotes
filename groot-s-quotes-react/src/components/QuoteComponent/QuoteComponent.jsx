@@ -7,7 +7,7 @@ const QuoteComponent = (props) => {
  
   return (
       <div className="quote-container d-flex justify-content-center mt-5">
-        <div className="card mt-2">
+        <div className="card ">
           { props.quotes!== null ? (
             props.quotes.map((quote)=> (
               <div className="quote-like-container" key={quote.id}>
@@ -15,9 +15,9 @@ const QuoteComponent = (props) => {
                   <div className="card mb-3">
                     <div className="row g-0">
                       <div className="col-md-4">
-                        <img src={quote.image} alt="Card cap" className="img-fluid rounded-start"/>
+                        <img src={quote.image} alt="card cap" className="img-fluid rounded-start"/>
                       </div>
-                      <div className="col-md-8">
+                      <div className="col-md-8 h-25">
                         <div className="card-body">
                           <h5 className="card-title">{quote.author_name}</h5>
                           <p className="card-text">{quote.quote_text}</p>

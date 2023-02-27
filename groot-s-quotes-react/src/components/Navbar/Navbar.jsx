@@ -36,7 +36,7 @@ function Navbar() {
         AuthButtons = (
             <ul className="navbar-nav">
                 <li className="nav-item">
-                    <NavLink className='btn navbar-buttons mx-2 mb-2' to="/login">Login</NavLink>
+                    <NavLink className='btn navbar-buttons mx-2' to="/login">Login</NavLink>
                 </li>
                 <li className="nav-item">
                     <NavLink className='btn navbar-buttons ' to="/signin">Sign In</NavLink>

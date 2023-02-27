@@ -1,12 +1,11 @@
 import React from 'react'
-import { useState} from 'react';
 
 const SearchComponent = (props) => {
   const {handleSubmit, handleInputChange} = props;
 
   return ( 
-    <form onSubmit={handleSubmit}>
-      <div className="input-group mb-3">
+    <form onSubmit={handleSubmit} className="d-flex justify-content-center">
+      <div className="input-group w-50">
         <div className="input-group-prepend">
             <input type="submit" className="btn btn-outline-secondary" value="Search" />
         </div>

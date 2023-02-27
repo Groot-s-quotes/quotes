@@ -52,7 +52,7 @@ const HomePage = () => {
   return (
     <>
       <Navbar/>
-      <CarouselComponent/>
+      <CarouselComponent quotes={quotes}/>
       <SearchComponent handleSubmit={handleSubmit} handleInputChange={handleInputChange} />
       <QuoteComponent quotes={quotes}/>
       <PaginateComponent numPages={numPages} page={page}/>

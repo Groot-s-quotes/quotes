@@ -12,6 +12,7 @@
 @import url(../components/PaginateComponent/PaginateComponent.css);
 @import url(../components/Navbar/Navbar.css);
 @import url(../pages/DashboardAdminPage/DashboardAdminPage.css);
+@import url(../pages/LogPage/LogPage.css);
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
@@ -28,15 +29,12 @@
 
 body, html {
     height: 100%;
-    margin: 0;
-    text-align: center;
-    color: var(--green-dark);
-}
-
-.bg {
-    background-image: url(../assets/images/groot_bg1.jpg);
-    height: 100%; 
+    background-image: url(../assets/images/groot_bg1.jpg); 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    text-align: center;
+    color: var(--green-dark);
 }
