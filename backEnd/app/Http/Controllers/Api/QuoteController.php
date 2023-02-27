@@ -32,7 +32,7 @@ class QuoteController extends Controller
         $quote->quote_text = $request->quote_text;
         $quote->oustanding = $request->oustanding;
         $quote->image = $request->image;
-        
+
         $quote->save();
         return $quote;
     }
@@ -52,6 +52,7 @@ class QuoteController extends Controller
         $quote->quote_text = $request->quote_text;
         $quote->oustanding = $request->oustanding;
         $quote->image = $request->image;
+
         $quote->save();
         return $quote;
     }

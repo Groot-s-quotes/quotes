@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import '../../../src/styles/Styles.css';
+import { QuotesContext } from '../../context/QuotesContext';
 
 import LikeComponent from '../LikeComponent/LikeComponent';
 
-const QuoteComponent = ({quotes, addToCollection}) => {
- 
+const QuoteComponent = ({quotes}) => {
+ const {addToCollection, quotesItem} = useContext(QuotesContext);
+ const isLogged = localStorage.getItem('auth_token');
+
+ const findQuote = (id) => quotesItem.find((quote) => quote.id === id);
   return (
       <div className="quote-container">
         <div className="card">
@@ -26,7 +30,9 @@ const QuoteComponent = ({quotes, addToCollection}) => {
                     </div>
                   </div>
                 </div>
-                <LikeComponent addToCollection={addToCollection} quote={quote} />
+                { isLogged ?
+                  <LikeComponent addToCollection={addToCollection} quote={quote} inFavorites={findQuote(quote.id)} /> : null
+                }
               </div>
             ))):
             ('There is no Quotes')
