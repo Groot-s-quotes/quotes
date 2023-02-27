@@ -73,7 +73,6 @@ font-size: 2rem;
 
 }
 
-
 .label-up + label:after,.label-up + label:before {
       content: "";
       position: absolute;
