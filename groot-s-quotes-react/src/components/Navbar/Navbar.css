@@ -1,4 +1,5 @@
 .header-container{
+    padding: 1vh;
     display: flex;
     align-items: center;
     padding: 1vh;
@@ -9,6 +10,7 @@
 
 .groot {
     height: 60px;
+    width: 50px;
     background-color: var(--white-bone);
 }
 
@@ -21,8 +23,13 @@
 
 .header-text {
     color: var(--white-bone);
+    font-size: 2.5em;
 }
 
 .navbar-buttons{
     background-color: var(--white-bone);
+}
+
+.logo-text {
+    width: 40%;
 }

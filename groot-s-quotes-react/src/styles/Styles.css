@@ -1,4 +1,3 @@
-@import url(../components/Header/Header.css);
 @import url(../components/SignInButton/SignInButton.css);
 @import url(../components/LogInButton/LogInButton.css);
 @import url(../components/WatchQuotesButton/WatchQuotesButton.css);
@@ -11,6 +10,7 @@
 @import url(../components/LikeComponent/LikeComponent.css);
 @import url(../components/EmailLabel/EmailLabel.css);
 @import url(../components/PaginateComponent/PaginateComponent.css);
+@import url(../components/Navbar/Navbar.css);
 @import url(../pages/DashboardAdminPage/DashboardAdminPage.css);
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
