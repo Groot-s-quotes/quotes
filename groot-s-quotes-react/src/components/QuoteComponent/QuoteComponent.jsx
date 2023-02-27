@@ -20,7 +20,7 @@ const QuoteComponent = (props) => {
                       <div className="col-md-8">
                         <div className="card-body">
                           <h5 className="card-title">{quote.author_name}</h5>
-                          <p className="card-text">{quote.quote_text}</p>
+                          <p className="card-text font" >{quote.quote_text}</p>
                         </div>   
                       </div>
                     </div>
