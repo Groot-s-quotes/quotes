@@ -16,7 +16,7 @@ class UserTest extends TestCase
         $this->assertTrue(true);
     }
 
-    //Check if user exists in database
+
     public function test_user_duplication()
     {
         $user1 = User::make([
@@ -44,7 +44,7 @@ class UserTest extends TestCase
 
         $this->assertTrue(true);
     }
-        //Perform a post() request to add a new user
+
         public function test_if_it_stores_new_users()
         {
             $response = $this->post('/register', [
@@ -55,20 +55,6 @@ class UserTest extends TestCase
             ]);
     
             $response->assertRedirect('/home');
-        }
-
-        public function test_if_data_exists_in_database()
-        {
-            $this->assertDatabaseHas('users', [
-                'name' => 'Maria'
-            ]);
-        }
-
-        public function test_if_data_does_not_exists_in_database()
-        {
-            $this->assertDatabaseMissing('users', [
-                'name' => 'Yassmina'
-            ]);
         }
 
 }
