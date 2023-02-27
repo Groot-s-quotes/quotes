@@ -7,6 +7,7 @@ import PasswordLabel from "../../components/PasswordLabel/PasswordLabel";
 import swal from "sweetalert";
 import { getAxiosInstance } from "../../axios/axios";
 import { useNavigate } from "react-router-dom";
+import BackButton from "../../components/BackButton/BackButtom";
 
 
 const instance = getAxiosInstance();
@@ -44,12 +45,12 @@ const navigate = useNavigate();
             swal("Success",res.data.message,"success"); 
             navigate('/admin');
           /*             if(res.data.role === 'admin') 
-             {
+            {
                 navigate('/admin');
             }
             else
             {
-               navigate('/user');
+              navigate('/user');
             }  */
         } else if (res.data.status === 401) {
           swal("Warning", res.data.message, "warning");
@@ -69,6 +70,7 @@ const navigate = useNavigate();
         <EmailLabel handleInput={handleInput} loginInput={loginInput} />
         <PasswordLabel handleInput={handleInput} loginInput={loginInput} />
         <StartButton loginSubmit={loginSubmit} />
+        <BackButton />
       </form>
     </div>
   );
