@@ -13,3 +13,8 @@
 .font {
     font-family: var(--quotes-letter);
 }
+
+.quote-image {
+    width: 10vh;
+    height: 12vh;
+}
