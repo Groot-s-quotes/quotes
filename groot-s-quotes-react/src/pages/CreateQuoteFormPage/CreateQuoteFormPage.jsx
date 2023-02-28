@@ -1,4 +1,4 @@
-
+import swal from "sweetalert";
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { getAxiosInstance } from '../../axios/axios';
@@ -34,7 +34,9 @@ function CreateQuoteFormPage() {
       setOustanding("");
       setImagedata("");
 
-    }, 1000);
+    }, 500);
+
+    swal("Success","Your quote has added","success"); 
   }
 
   return (

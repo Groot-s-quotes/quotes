@@ -7,11 +7,11 @@ const CarouselComponent = () => {
   <div className="carousel-inner">
     <div className="carousel-item active">
         <h1>Steve Jobs</h1>
-        <p>Innovation distinguishes between a leader and a follower</p>
+        <p className='letter'>Innovation distinguishes between a leader and a follower</p>
     </div>
     <div className="carousel-item">
         <h1>Arthur Balfour</h1>
-        <p>Enthusiasm moves the world</p>
+        <p className='letter'>Enthusiasm moves the world</p>
     </div>
   </div>
   <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
