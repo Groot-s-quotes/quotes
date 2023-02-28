@@ -9,7 +9,8 @@
 3. [Technologies](#technologies)
 4. [Tools](#tools)
 5. [Installation](#installation)
-6. [Design](#design)
+6. [Test](#test)
+7. [Design](#design)
     </p>
 ## General Info
 <p>Groot's Quotes is a website where all users can read motivational phrases. Registered users will be able to save the phrases they like the most,They can also create their sentences and accompany them with an image if they wish, edit them and delete them.</p>
@@ -53,7 +54,11 @@
 
 * Clone https://github.com/Groot-s-quotes/quotes
 * npm install
+* php artisan serve
 
+## Test
+
+* npm test
 
 ## Design
 
