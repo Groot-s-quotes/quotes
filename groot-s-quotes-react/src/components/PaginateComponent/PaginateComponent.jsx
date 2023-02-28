@@ -9,7 +9,7 @@ const PaginateComponent = (props) => {
   const createPaginationLinks = (numPages) => {
     const pages = [];
     for(let i = 1; i <= numPages; i++) {
-      pages.push(<li className="page-item"><a className="page-link" href={`/home/${i}`}>{i}</a></li>)
+      pages.push(<li className="page-item  mb-3"><a className="page-link" href={`/home/${i}`}>{i}</a></li>)
     }
     return pages;
   }

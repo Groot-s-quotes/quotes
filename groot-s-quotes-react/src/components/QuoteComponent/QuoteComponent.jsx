@@ -10,8 +10,8 @@ const QuoteComponent = ({quotes}) => {
 
  const findQuote = (id) => quotesItem.find((quote) => quote.id === id);
   return (
-      <div className="quote-container">
-        <div className="card">
+      <div className="quote-container d-flex justify-content-center mt-5">
+        <div className="card mb-2">
           { quotes!== null ? (
             quotes.map((quote)=> (
               <div className="quote-like-container" key={quote.id}>
@@ -19,9 +19,9 @@ const QuoteComponent = ({quotes}) => {
                   <div className="card mb-3">
                     <div className="row g-0">
                       <div className="col-md-4">
-                        <img src={quote.image} alt="Card cap" className="img-fluid rounded-start"/>
+                        <img src={quote.image} alt="card cap" className="img-fluid rounded-start"/>
                       </div>
-                      <div className="col-md-8">
+                      <div className="col-md-8 h-25">
                         <div className="card-body">
                           <h5 className="card-title">{quote.author_name}</h5>
                           <p className="card-text font" >{quote.quote_text}</p>
@@ -38,10 +38,7 @@ const QuoteComponent = ({quotes}) => {
             ('There is no Quotes')
           }
         </div>
-      </div>
-        
-        
-    
+      </div>  
   )
 }
 

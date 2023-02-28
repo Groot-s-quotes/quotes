@@ -25,6 +25,7 @@ Route::controller(QuoteController::class)->group(function () {
     Route::get('/quote/{id}', 'show');
     Route::put('/quote/{id}', 'update');
     Route::delete('/quote/{id}', 'destroy');
+    Route::get('/quotes', 'search');
 });
 
 Route::get('/quotes/search/{author_name}', [QuoteController::class, 'search']);

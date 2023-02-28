@@ -1,7 +1,7 @@
 import React from 'react';
 import './HomePage';
 
-import { getNumQuotes, getQuotes } from '../../services/Functions';
+import { getNumQuotes, getQuotes, getAuthorNumQuotes, getAuthorQuotes } from '../../services/Functions';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -16,8 +16,10 @@ import { QuotesProvider } from '../../context/QuotesContext';
 const HomePage = () => {
   const [quotes, setQuotes] = useState([]);
   const [numPages, setNumPages] = useState(0);
+  const [formData, setFormData] = useState({});
   const {page = 1} = useParams();
  
+
 
   const retrieveQuotes = async () => {
       const numQuotes = await getNumQuotes();
@@ -28,17 +30,34 @@ const HomePage = () => {
       
   }
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const authorName = formData.author.toLowerCase();
+    const numQuotes = await getAuthorNumQuotes(authorName);
+    const quotes = await getAuthorQuotes(1, authorName);
+
+    setQuotes(quotes);
+    setNumPages(Math.ceil(numQuotes / 3));
+
+  };
+
+  const handleInputChange = (event) => {
+    const {name, value} = event.target;
+
+    setFormData({...formData, [name]: value});
+  };
+
   useEffect(() => {
       retrieveQuotes();
   }, []);
 
-  
   return (
     <QuotesProvider>
       <Navbar/>
-      <CarouselComponent/>
-      <SearchComponent/>
-      <QuoteComponent quotes={quotes} />
+      <CarouselComponent quotes={quotes}/>
+      <SearchComponent handleSubmit={handleSubmit} handleInputChange={handleInputChange} />
+      <QuoteComponent quotes={quotes}/>
       <PaginateComponent numPages={numPages} page={page}/>
     </QuotesProvider>
 
