@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('author_name');
             $table->string('quote_text');
-            $table->boolean('oustanding');
+            $table->boolean('oustanding')->default(0);
             $table->string('image');
             $table->timestamps();
         });
