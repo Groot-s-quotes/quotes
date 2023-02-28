@@ -58,7 +58,7 @@
 
 ## Test
 
-* npm test
+* php artisan test
 
 ## Design
 
