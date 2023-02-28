@@ -1,9 +1,9 @@
 import React from 'react';
 import { getAxiosInstance } from "../../axios/axios";
-import { Link} from 'react-router-dom';
+import { Link, NavLink} from 'react-router-dom';
 import swal from 'sweetalert';
 import GrootLogo from '../../assets/images/groot_logo.png'
-import './Navbar.css';
+import '../../../src/styles/Styles.css';
 import Logout from '../Logout/Logout';
 
 
@@ -36,10 +36,10 @@ function Navbar() {
         AuthButtons = (
             <ul className="navbar-nav">
                 <li className="nav-item">
-                    <Link className='btn navbar-buttons mx-2 mb-2' to="/login">Login</Link>
+                    <NavLink className='btn navbar-buttons mx-2' to="/login">Login</NavLink>
                 </li>
                 <li className="nav-item">
-                    <Link className='btn navbar-buttons ' to="/signin">Sign In</Link>
+                    <NavLink className='btn navbar-buttons ' to="/signin">Sign In</NavLink>
                 </li>
             </ul>
         );
@@ -71,7 +71,7 @@ function Navbar() {
       <div className="groot-container">
         <img src={GrootLogo} alt='Groot logo' className='groot'/>
       </div>
-        <Link className="navbar-brand" to="#">Groot's Quote</Link>
+        <NavLink className="navbar-brand header-text" to="#">Groot's quotes</NavLink>
 
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>

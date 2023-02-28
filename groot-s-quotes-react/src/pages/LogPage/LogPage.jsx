@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./LogPage.css";
+import '../../../src/styles/Styles.css';
 import Header from "../../components/Header/Header";
 import StartButton from "../../components/StartButton/StartButton";
 import EmailLabel from "../../components/EmailLabel/EmailLabel";

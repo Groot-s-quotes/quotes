@@ -8,7 +8,7 @@ import PasswordSignIn from '../../components/PasswordSignIn/PasswordSignIn';
 import { getAxiosInstance } from '../../axios/axios';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import BackButton from '../../components/BackButton/BackButtom';
+
 
 
 
@@ -63,8 +63,7 @@ const RegisterPage = () => {
         <UserNameLabel registerInput={registerInput} handleInput={handleInput}/>
         <EmailSignIn registerInput={registerInput} handleInput={handleInput}/>
         <PasswordSignIn registerInput={registerInput} handleInput={handleInput}/>
-        <button type="submit" className='collection-1 btn-5'>Sign In</button>
-        <BackButton />
+        <button type="submit" className='collection-1 btn-5 border-0'>Sign In</button>
       </form>
     </div>
   )
