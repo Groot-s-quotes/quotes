@@ -1,9 +1,7 @@
-@import url(../components/Header/Header.css);
 @import url(../components/SignInButton/SignInButton.css);
 @import url(../components/LogInButton/LogInButton.css);
 @import url(../components/WatchQuotesButton/WatchQuotesButton.css);
 @import url(../components/SloganComponent/SloganComponent.css);
-@import url(../components/CarouselComponent/CarouselComponent.css);
 @import url(../components/QuoteComponent/QuoteComponent.css);
 @import url(../components/EmailSignIn/EmailSignIn.css);
 @import url(../components/PasswordSignIn/PasswordSignIn.css);
@@ -12,7 +10,9 @@
 @import url(../components/LikeComponent/LikeComponent.css);
 @import url(../components/EmailLabel/EmailLabel.css);
 @import url(../components/PaginateComponent/PaginateComponent.css);
+@import url(../components/Navbar/Navbar.css);
 @import url(../pages/DashboardAdminPage/DashboardAdminPage.css);
+@import url(../pages/LogPage/LogPage.css);
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
@@ -29,15 +29,13 @@
 
 body, html {
     height: 100%;
-    margin: 0;
-    text-align: center;
-    color: var(--green-dark);
-}
-
-.bg {
-    background-image: url(../assets/images/groot_bg1.jpg);
-    height: 100%; 
+    background-image: url(../assets/images/groot_bg1.jpg); 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    text-align: center;
+    color: var(--green-dark);
+    font-family: var(--letter);
 }
