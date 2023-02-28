@@ -62,7 +62,7 @@ const RegisterPage = () => {
         <UserNameLabel registerInput={registerInput} handleInput={handleInput}/>
         <EmailSignIn registerInput={registerInput} handleInput={handleInput}/>
         <PasswordSignIn registerInput={registerInput} handleInput={handleInput}/>
-        <button type="submit" className='collection-1 btn-5'>Sign In</button>
+        <button type="submit" className='collection-1 btn-5 border-0'>Sign In</button>
       </form>
     </div>
   )
