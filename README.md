@@ -53,8 +53,8 @@
 ## Installation
 
 * Clone https://github.com/Groot-s-quotes/quotes
-* npm install
-* php artisan serve
+* npm install (Front)
+* php artisan serve (Back)
 
 ## Test
 
