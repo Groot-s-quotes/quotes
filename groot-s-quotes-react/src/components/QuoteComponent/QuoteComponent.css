@@ -1,8 +1,8 @@
 .card {
     display:flex;
     flex-direction: column;
-    width: 800px;
     background-color: var(--white-bone);
+    width: 100%;
 }
 
 .quote-container {

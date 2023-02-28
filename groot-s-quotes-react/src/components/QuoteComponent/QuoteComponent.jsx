@@ -11,12 +11,11 @@ const QuoteComponent = ({quotes}) => {
  const findQuote = (id) => quotesItem.find((quote) => quote.id === id);
   return (
       <div className="quote-container d-flex justify-content-center mt-5">
-        <div className="card mb-2">
+        <div className="mb-2">
           { quotes!== null ? (
             quotes.map((quote)=> (
-              <div className="" key={quote.id}>
-                <div>
-                  <div className="card mb-3">
+        
+                  <div key={quote.id} className="card mb-3">
                     <div className="row g-0">
                       <div className="col-md-4">
                         <img src={quote.image} alt="card cap" className="img-fluid rounded-start quote-image"/>
@@ -28,8 +27,7 @@ const QuoteComponent = ({quotes}) => {
                         </div>   
                       </div>
                     </div>
-                  </div>
-                </div>
+                  
                 { isLogged ?
                   <LikeComponent addToCollection={addToCollection} quote={quote} inFavorites={findQuote(quote.id)} /> : null
                 }
