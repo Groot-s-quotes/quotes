@@ -21,11 +21,11 @@ class SendEmailToClientTest extends TestCase
         {
             //2ºcall the SendEmailToClient job and pass the user to it
             $mockMessage = \Mockery::mock(Message::class);
-            //SPY-----> $mockMessage = \Mockery::spy(Message::class);
+            // SPY---->     $mockMessage = \Mockery::spy(Message::class);
             $mockMessage->shouldReceive('to')->once->with($user->email);
 
             $closure($mockMessage);
-            //SPY-----> return true;
+            //return true;
         }));
     }
 }
