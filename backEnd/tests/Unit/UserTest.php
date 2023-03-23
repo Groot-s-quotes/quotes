@@ -4,6 +4,7 @@ namespace Tests\Unit;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Artisan;
 use Tests\TestCase;
 
 
@@ -55,6 +56,16 @@ class UserTest extends TestCase
             ]);
     
             $response->assertRedirect('/home');
+
+            $this->assertCount(1, User::all());
+        }
+
+        public function test_register()
+        {
+            Artisan::call('migrate');
+
+            $load = $this->post('/register');
+            /* $load->assertStatus(200)->assertSee('Register'); */
         }
 
 }
